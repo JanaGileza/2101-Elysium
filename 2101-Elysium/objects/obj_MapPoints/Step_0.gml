@@ -9,3 +9,9 @@ if(battle_won)
 
 if(is_merchant)
 	sprite_index = spr_mappoints_merchant
+
+if(is_boss_battle)
+	sprite_index = spr_mappoints_boss
+	
+if(is_start)
+	sprite_index = spr_mappoints_start

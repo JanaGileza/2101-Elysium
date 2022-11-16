@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//player_money = 0
+player_money = 0
 
-//players_current_hp = obj_protoplayer.hp
+players_current_hp = 100
 
 global.TotalMap = ds_list_create()
 global.grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);

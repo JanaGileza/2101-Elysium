@@ -11,5 +11,5 @@ path_found = false
 h = false
 v = false
 
-
+depth = -100
 
