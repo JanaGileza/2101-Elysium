@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Default variables for map_player
 // You can write your code in this editor
 
 move_x = 0

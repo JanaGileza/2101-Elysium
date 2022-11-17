@@ -39,6 +39,8 @@ check_sub_options = false
 image_xscale = 6
 image_yscale = 3.5
 
+text = ""
+
 function reset_UI_Box()
 {
 	image_xscale = 6

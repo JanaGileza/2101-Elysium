@@ -1,6 +1,7 @@
-/// @description Insert description here
+/// @description variables for player
 // You can write your code in this editor
 
+//needed variables for the player
 enum player_state
 {
 	idle,
@@ -25,3 +26,9 @@ player_target = noone
 state = player_state.idle
 
 fire_rate = 3
+
+image_speed = 0.2
+
+create_once = true
+
+pos = 0;

@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_baseenemy",
   "spriteId": {
-    "name": "spr_protoenemy",
-    "path": "sprites/spr_protoenemy/spr_protoenemy.yy",
+    "name": "spr_alien_placeholder",
+    "path": "sprites/spr_alien_placeholder/spr_alien_placeholder.yy",
   },
   "solid": false,
   "visible": true,

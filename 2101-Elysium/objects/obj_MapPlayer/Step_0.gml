@@ -1,6 +1,9 @@
-/// @description Insert description here
+/// @description Functionality of the player in the open world
 // You can write your code in this editor
 
+/*the player should not move when choosing the next destination, so we can prevent them creating
+	unwanted routes lol
+*/
 if(!moving)
 {
 	if(keyboard_check(ord("D")))
@@ -35,8 +38,17 @@ if(!moving)
 		moving = true;
 		v = true
 	}
-}
 	
+	if(keyboard_check(vk_enter))
+	{
+		instance_create_layer(x,y, "Buttons", obj_UI_Menu_Box)
+	}
+}
+
+/*
+	 if the player is ready to move, get the destination and save it for other purposes
+	 
+*/
 if(moving)
 {
 	path = path_add()
@@ -59,6 +71,7 @@ if(moving)
 		}
 	}
 	
+	//if path was not found, revert search variables back to prevent skipping points
 	if(!path_found)
 	{
 		if(h)
@@ -67,6 +80,7 @@ if(moving)
 			move_y = prev_y
 	}
 	
+	//resetting everything once the route is completed
 	if(path_index == -1)
 	{
 		moving = false

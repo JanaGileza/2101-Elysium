@@ -1,11 +1,35 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//testing purposes for when the player wins and lose
 if(keyboard_check(ord("1")))
 {
 	state = battle_states.win
 }
+if(keyboard_check(ord("2")))
+{
+	state = battle_states.lose
+}
+/////////////////////////////////////////////
 
+/*the central core for the battle, it keeps tracks and changes the state of the battle
+  start - instantiates everything for the battle, its only called once
+  
+  idle - despite its being called idle, it checks the priority queue and refills it if needed
+  after checking it will tell the next obj that its their turn
+  
+  player_turn - it tells the player is their turn and halts battle progress until the player
+  completes their turn
+  
+  enemy_turn - same as player but faster because of the choice speed
+  
+  calculate - checks the state of the battle, if there are no more enemies it will declare the player 
+  the winner, the opposite will happen if the player hp is 0 or less
+  
+  win - declares the player the winner (will need to display graphics to further show, will add rewards
+  screen soon)
+  
+  lose - declares the player the loser (will need to display graphics to further show)*/
 switch(state)
 {
 	case battle_states.start:
@@ -15,7 +39,7 @@ switch(state)
 		
 		for(i = 0; i < instance_number(obj_Position); i++)
 		{
-			show_debug_message(enemy_count)
+			//show_debug_message(enemy_count)
 			spot_check = instance_find(obj_Position, i).id
 			if(spot_check.type == "player" && !spot_check.spot_filled)
 			{
@@ -46,7 +70,6 @@ switch(state)
 		
 	if(ds_priority_empty(turn_order))
 	{
-		//temp_p = ds_priority_create()
 		for(i = 0; i < instance_number(obj_BaseBattle); i++)
 		{
 			var inst = instance_find(obj_BaseBattle, i)
@@ -59,12 +82,14 @@ switch(state)
 		ds_priority_delete_max(turn_order)
 		
 		if(obj_turn.object_index == obj_protoplayer)
+		{
 			state = battle_states.player_turn
+			create_once = true
+		}
 		else
 			state = battle_states.enemy_turn
 	}
 	break;
-	
 	case battle_states.player_turn:
 	if(instance_exists(obj_protoplayer))
 	{
@@ -74,18 +99,20 @@ switch(state)
 				next_turn = false;
 				obj_turn.my_turn = true;
 				obj_turn.player_target = noone
-				//alarm[0] = 2 * room_speed
+				
 			}
-			else
+			else 
 			{
-				state = battle_states.calculate
+				state = battle_states.calculate	
 			}
 			
-			
+			if(create_once)
+			{
+				create_once = false
+				instance_create_layer(obj_protoplayer.x + 40, obj_protoplayer.y + 275,"Buttons", obj_UI_Box)
+			}
 		
 	}
-	//else
-	//	state = battle_states.calculate;
 	break;
 	
 	case battle_states.enemy_turn:
@@ -127,7 +154,7 @@ switch(state)
 	case battle_states.win:
 		draw_text(surface_get_width(application_surface) / 2, 10, "Player Wins!")
 		obj_GameManager.battle_concluded = true
-		room_goto(World_Map)
+		room_goto(First_Playable_World)
 	break;
 	
 	case battle_states.lose:

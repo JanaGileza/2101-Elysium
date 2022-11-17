@@ -25,4 +25,5 @@ turn_order = ds_priority_create()
 next_turn = true;
 enemy_count = 0;
 saved_enemy_count = 0
-counter = 1;
+counter = 0;
+create_once = true

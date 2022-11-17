@@ -12,6 +12,9 @@ move_speed = irandom_range(2, 100)
 
 //my_name = "Basic " + string(instance_number(obj_baseenemy) - obj_BattleManager.enemy_count)
 
+obj_BattleManager.counter++;
 my_name = "Basic " + string(obj_BattleManager.counter)
 
-obj_BattleManager.counter++;
+
+image_speed = 0.1
+image_xscale = -1

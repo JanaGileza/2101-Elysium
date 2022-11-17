@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_MapPlayer",
   "spriteId": {
-    "name": "spr_protoplayer",
-    "path": "sprites/spr_protoplayer/spr_protoplayer.yy",
+    "name": "ActionCharacter_1_Idle_large",
+    "path": "sprites/ActionCharacter_1_Idle_large/ActionCharacter_1_Idle_large.yy",
   },
   "solid": false,
   "visible": true,

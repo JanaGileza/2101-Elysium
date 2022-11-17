@@ -1,10 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
-
-
-
+//used for prototyping purposes 
 switch(state)
 {
 	case battle_states.player_turn:
