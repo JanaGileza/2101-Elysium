@@ -8,6 +8,10 @@ if(keyboard_check(ord("3")))
 	room_goto(Battle_Room)
 }
 
+if(keyboard_check(ord("4")))
+{
+	script_execute(ds_grid)	
+}
 
 //making sure that we are not in the Battle_Room before entering, prevents calling upon deleted objects
 if(room != Battle_Room)

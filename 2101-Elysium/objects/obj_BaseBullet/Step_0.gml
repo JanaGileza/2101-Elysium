@@ -18,7 +18,7 @@ if(position_meeting(x,y,target))
 else
 {
 	if(instance_exists(target))
-		move_towards_point(target.x,y, b_speed);
+		move_towards_point(target.x,target.y, b_speed);
 }
 
 

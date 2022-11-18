@@ -10,35 +10,49 @@ if(button_pressed && obj_protoplayer.my_turn)
 	if(main_needed)
 	{
 		destroy_buttons()
-		main_needed = false;
 		create_main_buttons()
 		button_pressed = false
+		main_needed = false;
 	}
 
-	if(obj_protoplayer.state == player_state.idle)
+		
+	switch(obj_protoplayer.state)
 	{
-		reset_UI_Box()
-		main_needed = true
-	}
-
-	if(obj_protoplayer.state == player_state.attack)
-	{
+		case player_state.idle:
+			reset_UI_Box()
+		break;
+		case player_state.attack:
 			image_xscale = 4
 			image_yscale = 4.5
 			y = origin_y + 30
 			sub_needed = true
 			amount = obj_BattleManager.saved_enemy_count
 			s_state = ENEMY_SELECT
-			text = obj_baseenemy.my_name
+			for(i = 0; i < instance_number(obj_baseenemy); i++)
+			{
+				ds_list_add(sub_list, instance_find(obj_baseenemy, i))
+			}
+			
+		break;
+		case player_state.skill:
+			image_xscale = 4
+			image_yscale = 4.5
+			y = origin_y + 30
+			sub_needed = true
+			amount = ds_list_size(obj_GameManager.player_skills)
+			s_state = SKILL_SELECT
+			ds_list_copy(sub_list, obj_GameManager.player_skills)			
+		break;
+		
 	}
-
+	
 	if(sub_needed)
 	{
 		destroy_buttons()
+		main_needed = false
 		button_pressed = false
 		sub_needed = false
-		create_sub_buttons(amount, text, s_state)
-	
+		create_sub_buttons(sub_list, s_state)
 	}
 
 }

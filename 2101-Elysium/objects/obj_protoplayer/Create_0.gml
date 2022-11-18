@@ -32,3 +32,8 @@ image_speed = 0.2
 create_once = true
 
 pos = 0;
+
+skill_perf = noone
+
+defense_up = false
+turn_length = 0;

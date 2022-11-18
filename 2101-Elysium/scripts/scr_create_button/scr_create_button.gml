@@ -26,19 +26,21 @@ function create_main_buttons()
 }
 
 //used for choosing targets, skills, items
-function create_sub_buttons(amount, text, state)
+function create_sub_buttons(list, state)
 {	
 	next_pos = 0
+	amount = ds_list_size(list)
 	for(i = 0; i < amount; i++)
 	{
 		next_pos = 75 * i
-		button_struct(288, 650 + next_pos, 0, false, i, state, true, i)
+		button_struct(288, 650 + next_pos, 0, false, ds_list_find_value(list, i).my_name, state, true, i)
 	}
 	
  button_struct(288, 650 + (75 * amount), 0, false, "Cancel", CANCEL_SELECT, true, 0)
 
 	
 }
+
 
 //this creates the decision buttons in the world map, to see if the player wants to enter battle or town
 function create_world_decision_buttons(_x,_y)

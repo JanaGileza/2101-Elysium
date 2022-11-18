@@ -39,7 +39,8 @@ check_sub_options = false
 image_xscale = 6
 image_yscale = 3.5
 
-text = ""
+text = noone
+
 
 function reset_UI_Box()
 {
@@ -47,6 +48,9 @@ function reset_UI_Box()
 	image_yscale = 3.5
 	x = origin_x
 	y = origin_y
+	main_needed = true
+	sub_needed = false
+	ds_list_clear(sub_list)
 }
 
 

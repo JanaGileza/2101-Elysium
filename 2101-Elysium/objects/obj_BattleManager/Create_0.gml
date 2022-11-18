@@ -8,7 +8,8 @@ enum battle_states
 	enemy_turn,
 	win,
 	lose,
-	calculate
+	calculate,
+	escaped
 }
 
 state = battle_states.start
@@ -17,7 +18,7 @@ obj_turn = obj_protoplayer
 
 randomize()
 
-process_next_turn = true;
+process_next_turn = false;
 
 room_speed = 60
 

@@ -93,18 +93,24 @@ switch(state)
 	case battle_states.player_turn:
 	if(instance_exists(obj_protoplayer))
 	{
+		if(process_next_turn)
+		{
+				state = battle_states.calculate	
+				break;
+		}
 
 			if(next_turn && !obj_turn.my_turn)
 			{
 				next_turn = false;
 				obj_turn.my_turn = true;
 				obj_turn.player_target = noone
+				process_next_turn = false
+				obj_turn.state = player_state.idle
 				
 			}
-			else 
-			{
-				state = battle_states.calculate	
-			}
+			
+			
+			
 			
 			if(create_once)
 			{
@@ -118,13 +124,29 @@ switch(state)
 	case battle_states.enemy_turn:
 	if(instance_exists(obj_baseenemy))
 	{
-
-		if(next_turn)
+		if(process_next_turn )
+		{
+				state = battle_states.calculate	
+				break;
+		}
+		
+		if(next_turn && !obj_turn.my_turn)
 		{
 			next_turn = false;
-			obj_turn.my_turn = true;
-			alarm[0] = 2 * room_speed
+			if(!obj_turn.my_turn)
+			{
+				obj_turn.my_turn = true;
+			}
+			process_next_turn = false;
+			//alarm[0] = 2 * room_speed
 		}
+		
+		if(process_next_turn)
+			state = battle_states.calculate
+			
+		
+		
+		
 		//show_message(obj_turn.name + "turn")
 	}
 	//else
@@ -146,7 +168,7 @@ switch(state)
 			else
 				state = battle_states.idle
 		
-		
+			process_next_turn = false
 			//state = battle_states.idle
 		}
 	break;
@@ -160,6 +182,10 @@ switch(state)
 	case battle_states.lose:
 	
 		draw_text(surface_get_width(application_surface) / 2, 10, "Player Lost!")
+	break;
+	case battle_states.escaped:
+		obj_GameManager.battle_concluded = true
+		room_goto(First_Playable_World)
 	break;
 }
 

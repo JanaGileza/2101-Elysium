@@ -9,6 +9,11 @@ players_current_hp = 100
 global.TotalMap = ds_list_create()
 global.grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
 
+player_skills = ds_list_create()
+
+ds_list_add(player_skills, skill_stuct("Burst Shot", burst_shot))
+ds_list_add(player_skills, skill_stuct("Grenade Toss", grenade_toss))
+
 //make sure to set keep track of all map points
 with(obj_MapPoints)
 {

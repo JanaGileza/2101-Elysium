@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+defense_up = false
 
 wait = false;
 my_turn = false;
@@ -18,3 +18,5 @@ my_name = "Basic " + string(obj_BattleManager.counter)
 
 image_speed = 0.1
 image_xscale = -1
+
+shoot_once = false

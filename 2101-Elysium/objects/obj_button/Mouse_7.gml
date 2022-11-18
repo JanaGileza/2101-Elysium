@@ -13,10 +13,19 @@ if(room == Battle_Room)
 			{
 				case CANCEL_SELECT:
 					obj_protoplayer.state = player_state.idle
+					obj_UI_Box.button_pressed = true
 				break;
 				case ENEMY_SELECT:
 				{
 					obj_protoplayer.player_target = instance_find(obj_baseenemy, pos)
+					obj_UI_Box.button_pressed = true
+				}
+				break;
+				case SKILL_SELECT:
+				{
+					obj_protoplayer.player_target = instance_find(obj_baseenemy, pos)
+					obj_protoplayer.skill_perf = ds_list_find_value(obj_GameManager.player_skills, pos).scr_per
+					obj_UI_Box.button_pressed = true
 				}
 				break;
 			}
@@ -24,8 +33,9 @@ if(room == Battle_Room)
 		else
 		{
 			obj_protoplayer.state = state
+			obj_UI_Box.button_pressed = true
 		}
-		obj_UI_Box.button_pressed = true
+		
 
 	}
 	pressed = false

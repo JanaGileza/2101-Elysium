@@ -7,3 +7,5 @@ draw_text(x - 50, y -130, "State: " + string(state));
 //draw_text(x - 50, y -130, "FireRate: " + string(fire_rate));
 if(my_turn)
 	draw_text(x - 50, y -100, "my turn");
+
+draw_path(Path1, x, y, true)

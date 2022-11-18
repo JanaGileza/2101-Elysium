@@ -16,6 +16,17 @@
 //	wait = true;
 //	alarm[0] = 10 * room_speed;
 //}
+
+if(my_turn )
+{
+	if(shoot_once)
+	{
+		shoot_once = false
+		basic_shot(id, obj_protoplayer, Bullet_5)
+	}
+}
+else
+	shoot_once = true;
 if(hp < 0)
 	instance_destroy()
 

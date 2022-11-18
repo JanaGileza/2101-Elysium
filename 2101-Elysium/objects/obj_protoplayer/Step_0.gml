@@ -13,8 +13,11 @@ if(mouse_check_button(mb_left))
 //if its not the players turn just exit
 if(!my_turn)
 {
+	if(turn_length > 0)
+		turn_length--;
 	exit;
 }
+
 
 //if we are going to base basic attacks off of fire_rate
 if(buff_fire_rate)
@@ -25,6 +28,9 @@ if(buff_fire_rate)
 	basic_fire = true
 }
 
+if(defense_up)
+	if(turn_length <= 0)
+		defense_up = false;
 /*
 The meat and potatoes of the player, the finite state for the player. The player will have 6 or more states
 the main functions that performs is attacking, defending, utilizing skills/items and escaping if needed
@@ -53,15 +59,7 @@ switch(state)
 				basic_fire = false;
 				alarm[0] = fire_rate * room_speed
 				
-				//a struct to fill the bullet info
-				bullet_struct = 
-				{
-					this_sprite : Bullet_1,
-					parent : id,
-					target : player_target
-				}
-	
-				bullet = instance_create_layer(x,y,"Instances", obj_BaseBullet, bullet_struct)
+				basic_shot(id, player_target, Bullet_1)
 			}
 			//need to reset target to prevent target choice to be rolled over.
 			player_target = noone
@@ -69,10 +67,27 @@ switch(state)
 	}
 	break;
 	case player_state.skill:
+		if(player_target != noone)
+		{
+			if(skill_perf != noone)
+			{
+				script_execute(skill_perf, id, player_target, Bullet_1, false )
+			}
+			player_target = noone
+		}
 	break;
 	case player_state.defend:
+		defense_up = true
+		turn_length = 1;
+		my_turn = false;
+		obj_BattleManager.next_turn = true
+		obj_BattleManager.process_next_turn = true
 	break;
 	case player_state.item:
+	break;
+	case player_state.escape:
+		if(chance_hit(50))
+			obj_BattleManager.state = battle_states.escaped
 	break;
 
 }
