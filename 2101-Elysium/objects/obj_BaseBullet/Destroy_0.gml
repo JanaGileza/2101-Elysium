@@ -7,15 +7,18 @@
 		
 	target.hp -= damage;
 
-	parent.my_turn = false
-	obj_BattleManager.next_turn = true
-	obj_BattleManager.process_next_turn = true;
+	if(is_end)
+	{
+		parent.my_turn = false
+		obj_BattleManager.next_turn = true
+		obj_BattleManager.process_next_turn = true;
+	}
 	
 	
 
 			
-	destroy_buttons()
-	create_main_buttons()
-	obj_UI_Box.reset_UI_Box()
+	//destroy_buttons()
+	//create_main_buttons()
+	//obj_UI_Box.reset_UI_Box()
 
 

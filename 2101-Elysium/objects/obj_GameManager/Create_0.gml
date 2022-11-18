@@ -31,5 +31,7 @@ battle_concluded = false
 saved_point = current_point
 enter_point = false
 
+goto_point = noone
+changing_room = false
 
 

@@ -8,6 +8,12 @@ if(obj_GameManager.current_point.is_start)
 
 if(obj_GameManager.current_point.is_battle)
 		text = "Enter Battle?"
+
+if(obj_GameManager.current_point.is_merchant)
+		text = "Enter Town?"
+		
+if(obj_GameManager.current_point.is_boss_battle)
+	text = "Challenge The Boss?"
 		
 prev_h = draw_get_halign()
 prev_v = draw_get_valign()

@@ -21,14 +21,15 @@ function fireball(text, amount){
 	}
 }
 
-function basic_shot(obj_id, obj_target, bul_sprite)
+function basic_shot(obj_id, obj_target, bul_sprite, _isend)
 {
 	//a struct to fill the bullet info
 				bullet_struct = 
 				{
 					this_sprite : bul_sprite,
 					parent : obj_id,
-					target : obj_target
+					target : obj_target,
+					is_end : _isend
 				}
 	
 			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_BaseBullet, bullet_struct)
@@ -38,7 +39,10 @@ function burst_shot(obj_id, obj_target, bul_sprite, fire_now)
 {
 	for(i = 0; i < 3; i++)
 	{
-		basic_shot(obj_id, obj_target, bul_sprite)
+		if(i == 2)
+			basic_shot(obj_id, obj_target, bul_sprite, true)
+		else
+			basic_shot(obj_id, obj_target, bul_sprite, false)
 	}
 }
 

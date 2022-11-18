@@ -54,15 +54,13 @@ switch(state)
 		//checking if the player isnt targetting anyone
 		if(player_target != noone)
 		{
-			if(basic_fire)
-			{
-				basic_fire = false;
-				alarm[0] = fire_rate * room_speed
+
 				
-				basic_shot(id, player_target, Bullet_1)
-			}
+			basic_shot(id, player_target, Bullet_1, true)
+			
 			//need to reset target to prevent target choice to be rolled over.
 			player_target = noone
+			my_turn = false
 		}
 	}
 	break;
@@ -72,8 +70,10 @@ switch(state)
 			if(skill_perf != noone)
 			{
 				script_execute(skill_perf, id, player_target, Bullet_1, false )
+				player_target = noone
+				my_turn = false
 			}
-			player_target = noone
+			
 		}
 	break;
 	case player_state.defend:

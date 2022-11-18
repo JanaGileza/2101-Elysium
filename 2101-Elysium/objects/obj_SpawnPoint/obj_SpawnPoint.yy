@@ -1,12 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Block",
-  "spriteId": {
-    "name": "spr_block",
-    "path": "sprites/spr_block/spr_block.yy",
-  },
-  "solid": true,
+  "name": "obj_SpawnPoint",
+  "spriteId": null,
+  "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,

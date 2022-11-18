@@ -15,7 +15,9 @@ if(button_pressed)
 	switch(decision_made)
 	{
 		case 0:
+			obj_GameManager.goto_point = obj_GameManager.current_point.contained_room
 			obj_GameManager.enter_point = true
+			
 		break;
 		case 1:
 			destroy_buttons()
@@ -23,5 +25,7 @@ if(button_pressed)
 		break;
 		
 	}
+	
+	
 }
 

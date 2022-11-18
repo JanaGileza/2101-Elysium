@@ -17,15 +17,21 @@ if(room == Battle_Room)
 				break;
 				case ENEMY_SELECT:
 				{
+					if(obj_protoplayer.skill_perf != noone)
+						obj_protoplayer.state = player_state.skill
 					obj_protoplayer.player_target = instance_find(obj_baseenemy, pos)
 					obj_UI_Box.button_pressed = true
+					obj_UI_Box.create_once = true
 				}
 				break;
 				case SKILL_SELECT:
 				{
-					obj_protoplayer.player_target = instance_find(obj_baseenemy, pos)
+					//obj_protoplayer.player_target = instance_find(obj_baseenemy, pos)
 					obj_protoplayer.skill_perf = ds_list_find_value(obj_GameManager.player_skills, pos).scr_per
 					obj_UI_Box.button_pressed = true
+					obj_UI_Box.create_once = true
+					if(obj_UI_Box.check_sub_options)
+						obj_protoplayer.state = player_state.attack
 				}
 				break;
 			}

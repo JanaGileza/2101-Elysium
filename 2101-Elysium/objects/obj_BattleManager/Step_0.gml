@@ -106,11 +106,10 @@ switch(state)
 				obj_turn.player_target = noone
 				process_next_turn = false
 				obj_turn.state = player_state.idle
+				destroy_buttons()
+				create_main_buttons()
 				
 			}
-			
-			
-			
 			
 			if(create_once)
 			{
@@ -176,7 +175,8 @@ switch(state)
 	case battle_states.win:
 		draw_text(surface_get_width(application_surface) / 2, 10, "Player Wins!")
 		obj_GameManager.battle_concluded = true
-		room_goto(First_Playable_World)
+		obj_GameManager.goto_point = First_Playable_World
+		obj_GameManager.enter_point = true
 	break;
 	
 	case battle_states.lose:
@@ -185,7 +185,8 @@ switch(state)
 	break;
 	case battle_states.escaped:
 		obj_GameManager.battle_concluded = true
-		room_goto(First_Playable_World)
+		obj_GameManager.goto_point = First_Playable_World
+		obj_GameManager.enter_point = true
 	break;
 }
 

@@ -13,16 +13,32 @@ if(keyboard_check(ord("4")))
 	script_execute(ds_grid)	
 }
 
-//making sure that we are not in the Battle_Room before entering, prevents calling upon deleted objects
-if(room != Battle_Room)
+if(enter_point)
 {
-	if(enter_point)
+	changing_room = true
+//making sure that we are not in the Battle_Room before entering, prevents calling upon deleted objects
+	if(goto_point == Battle_Room)
 	{
-		if(current_point.is_battle)
-		{
-			room_goto(Battle_Room)
-		}
+			if(current_point.is_battle)
+			{
+				saved_point = current_point
+				enter_point = false
+				room_goto(goto_point)
+			}
+		
 	}
+	else if(goto_point == First_Playable_Town)
+	{
+				saved_point = current_point
+				enter_point = false
+				room_goto(goto_point)
+	}
+	else
+	{
+		room_goto(goto_point)
+	}
+	
+
 }
 		
 

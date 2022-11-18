@@ -65,7 +65,7 @@ if(moving)
 				move_y = point.map_y
 				path_found = true
 				obj_GameManager.current_point = point
-				path_start(path, 2,  0, false)
+				path_start(path, 5,  0, false)
 				break
 			}
 		}

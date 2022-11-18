@@ -41,6 +41,8 @@ image_yscale = 3.5
 
 text = noone
 
+create_once = false
+
 
 function reset_UI_Box()
 {
