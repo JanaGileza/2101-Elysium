@@ -13,3 +13,4 @@ v = false
 
 depth = -100
 
+interact = false

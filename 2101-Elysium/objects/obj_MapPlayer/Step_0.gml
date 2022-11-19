@@ -4,6 +4,9 @@
 /*the player should not move when choosing the next destination, so we can prevent them creating
 	unwanted routes lol
 */
+
+//if(!place_meeting(x,y, obj_MapPlayer))
+//	interact = false
 if(!moving)
 {
 	if(keyboard_check(ord("D")))

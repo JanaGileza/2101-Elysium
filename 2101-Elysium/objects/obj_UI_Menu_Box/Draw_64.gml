@@ -4,7 +4,7 @@
 
 
 if(obj_GameManager.current_point.is_start)
-		text = "Great this works"
+		text = "This is the start"
 
 if(obj_GameManager.current_point.is_battle)
 		text = "Enter Battle?"

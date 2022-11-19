@@ -81,6 +81,8 @@ switch(state)
 		obj_turn = ds_priority_find_max(turn_order)
 		ds_priority_delete_max(turn_order)
 		
+		if(!instance_exists(obj_turn))
+			break;
 		if(obj_turn.object_index == obj_protoplayer)
 		{
 			state = battle_states.player_turn
@@ -182,6 +184,10 @@ switch(state)
 	case battle_states.lose:
 	
 		draw_text(surface_get_width(application_surface) / 2, 10, "Player Lost!")
+		obj_GameManager.battle_concluded = true
+		obj_GameManager.goto_point = First_Playable_World
+		obj_GameManager.player_loss = true
+		obj_GameManager.enter_point = true
 	break;
 	case battle_states.escaped:
 		obj_GameManager.battle_concluded = true

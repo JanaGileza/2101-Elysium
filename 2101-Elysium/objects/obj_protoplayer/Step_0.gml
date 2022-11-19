@@ -84,6 +84,10 @@ switch(state)
 		obj_BattleManager.process_next_turn = true
 	break;
 	case player_state.item:
+		show_message("Work In Progress")
+		my_turn = false;
+		obj_BattleManager.next_turn = true
+		obj_BattleManager.process_next_turn = true	
 	break;
 	case player_state.escape:
 		if(chance_hit(50))

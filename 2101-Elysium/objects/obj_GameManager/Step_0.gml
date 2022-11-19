@@ -13,6 +13,14 @@ if(keyboard_check(ord("4")))
 	script_execute(ds_grid)	
 }
 
+if(player_loss)
+{
+	room_goto(lose_room)
+	enter_point = false
+	player_loss = false
+}
+
+
 if(enter_point)
 {
 	changing_room = true
@@ -23,6 +31,8 @@ if(enter_point)
 			{
 				saved_point = current_point
 				enter_point = false
+				player = obj_protoplayer
+				multi = saved_point.map_x
 				room_goto(goto_point)
 			}
 		
@@ -31,10 +41,12 @@ if(enter_point)
 	{
 				saved_point = current_point
 				enter_point = false
+				player = obj_TownPlayer
 				room_goto(goto_point)
 	}
 	else
 	{
+		player = obj_MapPlayer
 		room_goto(goto_point)
 	}
 	

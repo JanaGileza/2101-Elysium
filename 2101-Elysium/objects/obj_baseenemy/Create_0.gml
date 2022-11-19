@@ -20,3 +20,5 @@ image_speed = 0.1
 image_xscale = -1
 
 shoot_once = false
+
+hp = hp * obj_GameManager.multi;

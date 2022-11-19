@@ -6,7 +6,7 @@ if(is_battle)
 else if(is_merchant) 
 	contained_room = First_Playable_Town
 else if(is_boss_battle)
-	contained_room = Battle_Room
+	contained_room = win_room
 
 
 

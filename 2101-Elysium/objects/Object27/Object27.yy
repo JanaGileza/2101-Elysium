@@ -1,11 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_basecivilian",
-  "spriteId": {
-    "name": "spr_protonpc",
-    "path": "sprites/spr_protonpc/spr_protonpc.yy",
-  },
+  "name": "Object27",
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
@@ -25,9 +22,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [],
-  "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"Move_Speed","varType":0,"value":"3","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],},
-  ],
+  "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",

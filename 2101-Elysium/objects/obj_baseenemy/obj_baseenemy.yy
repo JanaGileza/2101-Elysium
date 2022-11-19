@@ -37,7 +37,10 @@
   "properties": [
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"my_name","varType":2,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],},
   ],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"hp","path":"objects/obj_BaseBattle/obj_BaseBattle.yy",},"objectId":{"name":"obj_BaseBattle","path":"objects/obj_BaseBattle/obj_BaseBattle.yy",},"value":"10",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"hp_max","path":"objects/obj_BaseBattle/obj_BaseBattle.yy",},"objectId":{"name":"obj_BaseBattle","path":"objects/obj_BaseBattle/obj_BaseBattle.yy",},"value":"10",},
+  ],
   "parent": {
     "name": "Objects",
     "path": "folders/Objects.yy",
