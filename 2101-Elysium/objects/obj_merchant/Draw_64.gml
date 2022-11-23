@@ -15,7 +15,7 @@ draw_set_color(c_white);
 for(i = 0; i < item_num; i++)
 {
 	var item_slot = ds_list_find_value(items, i)
-	var item = item_slot[0];
+	var item = item_slot.my_name;
 	
 	_x = m_marge + m_width/2;
 	_y = (g_height/2) + (i-selected)*32;

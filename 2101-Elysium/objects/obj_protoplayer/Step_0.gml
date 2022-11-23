@@ -69,9 +69,10 @@ switch(state)
 		{
 			if(skill_perf != noone)
 			{
-				script_execute(skill_perf, id, player_target, Bullet_1, false )
+				script_execute(skill_perf, id, player_target, Bullet_1, true )
 				player_target = noone
 				my_turn = false
+				skill_perf = noone
 			}
 			
 		}
@@ -84,10 +85,6 @@ switch(state)
 		obj_BattleManager.process_next_turn = true
 	break;
 	case player_state.item:
-		show_message("Work In Progress")
-		my_turn = false;
-		obj_BattleManager.next_turn = true
-		obj_BattleManager.process_next_turn = true	
 	break;
 	case player_state.escape:
 		if(chance_hit(50))

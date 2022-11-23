@@ -52,7 +52,8 @@ function grenade_toss(obj_id, obj_target, bul_sprite, fire_now)
 				{
 					this_sprite : bul_sprite,
 					parent : obj_id,
-					target : obj_target
+					target : obj_target,
+					is_end : fire_now
 				}
 	
 			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_GrenadeBullet, bullet_struct)

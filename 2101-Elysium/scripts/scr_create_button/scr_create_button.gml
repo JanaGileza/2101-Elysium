@@ -33,7 +33,7 @@ function create_sub_buttons(list, state)
 	for(i = 0; i < amount; i++)
 	{
 		next_pos = 75 * i
-		button_struct(288, 650 + next_pos, 0, false, ds_list_find_value(list, i).my_name, state, true, i)
+		button_struct(288, 650 + next_pos, 0, false, string(ds_list_find_value(list, i).my_name), state, true, i)
 	}
 	
  button_struct(288, 650 + (75 * amount), 0, false, "Cancel", CANCEL_SELECT, true, 0)

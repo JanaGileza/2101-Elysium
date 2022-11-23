@@ -8,6 +8,10 @@ if(position_meeting(x,y,target))
 	instance_destroy()
 else
 {
-	path_start(Path1, 0.1, path_action_reverse, true)
 	
+	
+	
+	//path_change_point(Path1, 0, target.x, target.y, -10)
+
+	//path_start(Path1, -3, path_action_stop, true)
 }
