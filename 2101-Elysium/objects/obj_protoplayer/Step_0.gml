@@ -85,6 +85,15 @@ switch(state)
 		obj_BattleManager.process_next_turn = true
 	break;
 	case player_state.item:
+		if(item_perf != noone)
+		{
+			item_execute(item_perf)
+			player_target = noone
+			my_turn = false
+			item_perf = noone
+			obj_BattleManager.next_turn = true;
+			obj_BattleManager.process_next_turn = true;
+		}
 	break;
 	case player_state.escape:
 		if(chance_hit(50))

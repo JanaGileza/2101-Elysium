@@ -34,6 +34,17 @@ if(room == Battle_Room)
 						obj_protoplayer.state = player_state.attack
 				}
 				break;
+				case ITEM_SELECT:
+				{
+					
+					obj_protoplayer.item_perf = ds_list_find_value(global.player_inv, pos)
+					obj_UI_Box.button_pressed = true;
+					obj_UI_Box.create_once = true;
+					ds_list_find_value(global.player_inv, pos).my_total--;
+					if(ds_list_find_value(global.player_inv,pos).my_total <= 0)
+						ds_list_delete(global.player_inv,pos)
+				}
+				break
 			}
 		}
 		else

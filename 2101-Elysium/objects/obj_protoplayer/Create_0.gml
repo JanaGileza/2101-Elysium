@@ -34,6 +34,7 @@ create_once = true
 pos = 0;
 
 skill_perf = noone
+item_perf = noone
 
 defense_up = false
 turn_length = 0;

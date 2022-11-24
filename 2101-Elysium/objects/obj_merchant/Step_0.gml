@@ -48,12 +48,19 @@ if(is_open)
 	var item_slot = ds_list_find_value(items, selected)
 	var item_name = item_slot.my_name
 	var item_price = item_slot.my_cost
-	
+	var check_for = -1
 	if(keyboard_check_pressed(vk_enter))
 	{
 		if(obj_GameManager.player_money >= item_price)
 		{
-			ds_list_add(global.player_inv, item_slot)
+			check_for = ds_list_find_index(global.player_inv, item_slot)
+			if(check_for != -1)
+				ds_list_find_value(global.player_inv, check_for).my_total++
+			else
+			{
+				item_slot.my_total++
+				ds_list_add(global.player_inv, item_slot)
+			}
 			
 			obj_GameManager.player_money -= item_price;
 		}

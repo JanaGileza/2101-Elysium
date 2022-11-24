@@ -144,10 +144,7 @@ switch(state)
 		
 		if(process_next_turn)
 			state = battle_states.calculate
-			
-		
-		
-		
+					
 		//show_message(obj_turn.name + "turn")
 	}
 	//else
