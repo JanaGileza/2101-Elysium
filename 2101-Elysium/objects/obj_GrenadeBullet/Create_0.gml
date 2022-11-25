@@ -4,7 +4,7 @@
 
 // Inherit the parent event
 event_inherited();
-show_message(path_get_length(Path1))
+//show_message(path_get_length(Path1))
 x = parent.x
 y = parent.y
 path_change_point(Path1,0, x, y, 30)

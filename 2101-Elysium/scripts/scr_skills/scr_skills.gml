@@ -1,14 +1,15 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-function skill_stuct (_myname, _skillfunction)
+function skill_stuct (_myname, _skillfunction, _skillcost)
 {
 
 	
 	this_struct = 
 	{
 		my_name : _myname,
-		scr_per : _skillfunction
+		scr_per : _skillfunction,
+		my_cost : _skillcost
 	}
 	
 	return this_struct
@@ -31,19 +32,26 @@ function basic_shot(obj_id, obj_target, bul_sprite, _isend)
 					target : obj_target,
 					is_end : _isend
 				}
-	
+			
 			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_BaseBullet, bullet_struct)
+			 
+			 
 }
 
 function burst_shot(obj_id, obj_target, bul_sprite, fire_now)
 {
-	for(i = 0; i < 3; i++)
-	{
-		if(i == 2)
-			basic_shot(obj_id, obj_target, bul_sprite, true)
-		else
-			basic_shot(obj_id, obj_target, bul_sprite, false)
-	}
+	//for(i = 0; i < 10; i++)
+	//{
+	//	if(i == 9)
+	//		basic_shot(obj_id, obj_target, bul_sprite, true)
+	//	else if(i % 2 == 0)
+	//		basic_shot(obj_id, obj_target, bul_sprite, false)
+	//}
+	basic_shot(obj_id, obj_target, bul_sprite, fire_now)
+	
+	
+	if(fire_now)
+		obj_protoplayer.mana -= 10;
 }
 
 function grenade_toss(obj_id, obj_target, bul_sprite, fire_now)

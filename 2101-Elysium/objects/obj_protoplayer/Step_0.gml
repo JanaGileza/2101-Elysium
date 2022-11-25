@@ -69,10 +69,36 @@ switch(state)
 		{
 			if(skill_perf != noone)
 			{
-				script_execute(skill_perf, id, player_target, Bullet_1, true )
-				player_target = noone
-				my_turn = false
-				skill_perf = noone
+				if(skill_perf == burst_shot)
+				{
+					if(fire_now)
+					{
+						fire_now = false;
+						alarm[0] = 0.05 * room_speed;
+						burst_count++
+						if(burst_count > 3)
+						{
+							script_execute(skill_perf, id, player_target, Bullet_1, true )
+							player_target = noone
+							my_turn = false
+							skill_perf = noone
+							burst_count = 0
+						}
+						else
+						{
+							script_execute(skill_perf, id, player_target, Bullet_1, false )
+							
+						}
+					
+					}
+				}
+				else
+				{
+						script_execute(skill_perf, id, player_target, Bullet_1, true )
+						player_target = noone
+						my_turn = false
+						skill_perf = noone
+				}
 			}
 			
 		}

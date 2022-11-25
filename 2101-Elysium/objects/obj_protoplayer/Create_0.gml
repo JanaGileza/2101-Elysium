@@ -15,9 +15,12 @@ enum player_state
 
 movespeed = 3;
 
+burst_count = 0
 selected = false
 
 basic_fire = true;
+
+fire_now = true;
 
 buff_fire_rate = false;
 

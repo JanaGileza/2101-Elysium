@@ -14,6 +14,7 @@ enum battle_states
 
 state = battle_states.start
 obj_turn = obj_protoplayer
+global.total_damage = 0;
 
 
 randomize()
@@ -28,3 +29,4 @@ enemy_count = 0;
 saved_enemy_count = 0
 counter = 0;
 create_once = true
+wait = false

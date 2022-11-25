@@ -10,6 +10,9 @@ if(keyboard_check(ord("2")))
 {
 	state = battle_states.lose
 }
+
+if(wait)
+	exit;
 /////////////////////////////////////////////
 
 /*the central core for the battle, it keeps tracks and changes the state of the battle
@@ -78,11 +81,32 @@ switch(state)
 	}
 	else
 	{
+		
+		if(instance_exists(obj_UI_TextBox))
+		{
+			if(keyboard_check(vk_enter))
+			{
+				instance_destroy(obj_UI_TextBox)
+			}
+			else
+				exit;
+		}
 		obj_turn = ds_priority_find_max(turn_order)
 		ds_priority_delete_max(turn_order)
 		
 		if(!instance_exists(obj_turn))
 			break;
+		
+		
+		//if(instance_exists(obj_UI_TextBox))
+		//{
+		//		wait = true
+		//		alarm[11] = 3 * room_speed
+		//		//instance_destroy(obj_UI_TextBox)
+		//}
+		
+	
+		
 		if(obj_turn.object_index == obj_protoplayer)
 		{
 			state = battle_states.player_turn
