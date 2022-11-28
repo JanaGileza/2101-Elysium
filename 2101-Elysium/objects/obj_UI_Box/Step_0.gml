@@ -50,6 +50,16 @@ if(button_pressed && obj_protoplayer.my_turn)
 			ds_list_copy(sub_list, obj_GameManager.player_skills)	
 			check_sub_options = true
 		break;
+		case player_state.item:
+			image_xscale = 4
+			image_yscale = 4.5
+			y = origin_y + 30
+			sub_needed = true
+			amount = ds_list_size(global.player_inv)
+			s_state = ITEM_SELECT
+			ds_list_copy(sub_list, global.player_inv)	
+			check_sub_options = true	
+		break
 		
 	}
 	

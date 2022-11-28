@@ -3,3 +3,5 @@
 
 
 basic_fire = true
+
+fire_now = true

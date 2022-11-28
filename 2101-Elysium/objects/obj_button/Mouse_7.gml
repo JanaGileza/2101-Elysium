@@ -26,14 +26,35 @@ if(room == Battle_Room)
 				break;
 				case SKILL_SELECT:
 				{
-					//obj_protoplayer.player_target = instance_find(obj_baseenemy, pos)
-					obj_protoplayer.skill_perf = ds_list_find_value(obj_GameManager.player_skills, pos).scr_per
-					obj_UI_Box.button_pressed = true
-					obj_UI_Box.create_once = true
-					if(obj_UI_Box.check_sub_options)
-						obj_protoplayer.state = player_state.attack
+					if(obj_protoplayer.mana >= ds_list_find_value(obj_GameManager.player_skills, pos).my_cost)
+					{
+						obj_protoplayer.mana -= ds_list_find_value(obj_GameManager.player_skills, pos).my_cost
+						//obj_protoplayer.player_target = instance_find(obj_baseenemy, pos)
+						obj_protoplayer.skill_perf = ds_list_find_value(obj_GameManager.player_skills, pos).scr_per
+						obj_UI_Box.button_pressed = true
+						obj_UI_Box.create_once = true
+						if(obj_UI_Box.check_sub_options)
+							obj_protoplayer.state = player_state.attack
+					}
+					else
+					{
+						var text_box = instance_create_layer(surface_get_width(application_surface) / 2, surface_get_height(application_surface) / 2, "Instances",obj_UI_TextBox)
+						text_box.msg = "Not enough MP"
+						text_box.is_error = true
+					}
 				}
 				break;
+				case ITEM_SELECT:
+				{
+					
+					obj_protoplayer.item_perf = ds_list_find_value(global.player_inv, pos)
+					obj_UI_Box.button_pressed = true;
+					obj_UI_Box.create_once = true;
+					ds_list_find_value(global.player_inv, pos).my_total--;
+					if(ds_list_find_value(global.player_inv,pos).my_total <= 0)
+						ds_list_delete(global.player_inv,pos)
+				}
+				break
 			}
 		}
 		else

@@ -15,9 +15,12 @@ enum player_state
 
 movespeed = 3;
 
+burst_count = 0
 selected = false
 
 basic_fire = true;
+
+fire_now = true;
 
 buff_fire_rate = false;
 
@@ -34,6 +37,7 @@ create_once = true
 pos = 0;
 
 skill_perf = noone
+item_perf = noone
 
 defense_up = false
 turn_length = 0;
