@@ -86,7 +86,8 @@ switch(state)
 		{
 			if(keyboard_check(vk_enter))
 			{
-				instance_destroy(obj_UI_TextBox)
+				wait = true
+				alarm[11] = 0.5 * room_speed
 			}
 			else
 				exit;

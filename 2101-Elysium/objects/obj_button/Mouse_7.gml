@@ -12,8 +12,14 @@ if(room == Battle_Room)
 			switch(state)
 			{
 				case CANCEL_SELECT:
+					if(obj_protoplayer.skill_perf != noone)
+					{
+						obj_protoplayer.mana += ds_list_find_value(obj_GameManager.player_skills, pos).my_cost
+						obj_protoplayer.skill_perf = noone
+					}
 					obj_protoplayer.state = player_state.idle
 					obj_UI_Box.button_pressed = true
+					
 				break;
 				case ENEMY_SELECT:
 				{
