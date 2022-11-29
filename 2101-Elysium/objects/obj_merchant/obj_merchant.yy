@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_merchant",
   "spriteId": {
-    "name": "spr_protoplayer",
-    "path": "sprites/spr_protoplayer/spr_protoplayer.yy",
+    "name": "spr_mappoints_merchant",
+    "path": "sprites/spr_mappoints_merchant/spr_mappoints_merchant.yy",
   },
   "solid": false,
   "visible": true,
