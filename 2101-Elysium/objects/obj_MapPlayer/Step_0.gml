@@ -15,6 +15,7 @@ if(!moving)
 		move_x++;
 		moving = true;
 		h = true
+		image_xscale = -1
 	}
 	
 	if(keyboard_check(ord("A")))
@@ -23,6 +24,7 @@ if(!moving)
 		move_x--;
 		moving = true;
 		h = true
+		image_xscale = 1
 	}
 	
 

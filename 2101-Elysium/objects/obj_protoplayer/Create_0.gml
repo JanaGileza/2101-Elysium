@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 //needed variables for the player
+image_xscale = -1
 enum player_state
 {
 	idle,
