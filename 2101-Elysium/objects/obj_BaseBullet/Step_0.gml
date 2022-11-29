@@ -6,7 +6,8 @@
 if(!instance_exists(target))
 {
 	//if(parent == obj_protoplayer)
-		target = instance_nearest(x,y,obj_baseenemy)
+		//target = instance_nearest(x,y,obj_baseenemy)
+		instance_destroy()
 }
 	
 if(position_meeting(x,y,target))

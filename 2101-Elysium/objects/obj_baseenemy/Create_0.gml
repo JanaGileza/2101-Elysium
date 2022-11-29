@@ -22,3 +22,7 @@ image_xscale = -1
 shoot_once = false
 
 hp = hp * obj_GameManager.multi;
+hp_max = hp;
+
+choice_num = 0;
+save_self = 0;

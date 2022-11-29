@@ -12,6 +12,7 @@
     {"id":{"name":"Battle_Room","path":"rooms/Battle_Room/Battle_Room.yy",},"order":0,},
     {"id":{"name":"ActionCharacter_6_Charge","path":"sprites/ActionCharacter_6_Charge/ActionCharacter_6_Charge.yy",},"order":13,},
     {"id":{"name":"spr_protoplayer","path":"sprites/spr_protoplayer/spr_protoplayer.yy",},"order":17,},
+    {"id":{"name":"obj_bossenemy","path":"objects/obj_bossenemy/obj_bossenemy.yy",},"order":31,},
     {"id":{"name":"First_Playable_Town","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},"order":3,},
     {"id":{"name":"Lite1A_Gif","path":"sprites/Lite1A_Gif/Lite1A_Gif.yy",},"order":0,},
     {"id":{"name":"ActionCharacter_5_Death","path":"sprites/ActionCharacter_5_Death/ActionCharacter_5_Death.yy",},"order":12,},
@@ -193,6 +194,6 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.9.1.51",
+    "IDEVersion": "2022.9.0.49",
   },
 }
