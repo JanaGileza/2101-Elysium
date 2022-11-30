@@ -28,9 +28,9 @@ if(buff_fire_rate)
 	basic_fire = true
 }
 
-
+if(defense_up)
 	if(turn_length <= 0)
-		defense_reduction = 1;
+		defense_up = false;
 /*
 The meat and potatoes of the player, the finite state for the player. The player will have 6 or more states
 the main functions that performs is attacking, defending, utilizing skills/items and escaping if needed
@@ -104,8 +104,7 @@ switch(state)
 		}
 	break;
 	case player_state.defend:
-		//defense_up = true
-		defense_reduction *= 2;
+		defense_up = true
 		turn_length = 1;
 		my_turn = false;
 		obj_BattleManager.next_turn = true

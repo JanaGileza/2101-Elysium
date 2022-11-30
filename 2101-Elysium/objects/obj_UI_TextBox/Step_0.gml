@@ -10,6 +10,6 @@
 
 if(is_error)
 {
-	if(keyboard_check(vk_anykey))
+	if(keyboard_check(vk_enter))
 		instance_destroy()
 }

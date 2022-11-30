@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_npc1",
   "spriteId": {
-    "name": "placeholder_1",
-    "path": "sprites/placeholder_1/placeholder_1.yy",
+    "name": "spr_town_robot",
+    "path": "sprites/spr_town_robot/spr_town_robot.yy",
   },
   "solid": false,
   "visible": true,
@@ -29,6 +29,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
