@@ -3,6 +3,7 @@
 
 function skill_stuct (_myname, _skillfunction, _skillcost)
 {
+
 	
 	this_struct = 
 	{
@@ -32,17 +33,25 @@ function basic_shot(obj_id, obj_target, bul_sprite, _isend)
 					is_end : _isend
 				}
 			
-			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_BaseBullet, bullet_struct) 	 
+			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_BaseBullet, bullet_struct)
+			 
+			 
 }
 
 function burst_shot(obj_id, obj_target, bul_sprite, fire_now)
 {
-
+	//for(i = 0; i < 10; i++)
+	//{
+	//	if(i == 9)
+	//		basic_shot(obj_id, obj_target, bul_sprite, true)
+	//	else if(i % 2 == 0)
+	//		basic_shot(obj_id, obj_target, bul_sprite, false)
+	//}
 	basic_shot(obj_id, obj_target, bul_sprite, fire_now)
 	
 	
-	//if(fire_now)
-	//	obj_protoplayer.mana -= 10;
+	if(fire_now)
+		obj_protoplayer.mana -= 10;
 }
 
 function grenade_toss(obj_id, obj_target, bul_sprite, fire_now)
@@ -57,12 +66,4 @@ function grenade_toss(obj_id, obj_target, bul_sprite, fire_now)
 	
 			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_GrenadeBullet, bullet_struct)
 }
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Enemy SKills
-///////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 

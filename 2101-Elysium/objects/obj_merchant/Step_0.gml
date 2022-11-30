@@ -51,7 +51,7 @@ if(is_open)
 	var check_for = -1
 	if(keyboard_check_pressed(vk_enter))
 	{
-		if(global.player_money >= item_price)
+		if(obj_GameManager.player_money >= item_price)
 		{
 			check_for = ds_list_find_index(global.player_inv, item_slot)
 			if(check_for != -1)
@@ -62,7 +62,7 @@ if(is_open)
 				ds_list_add(global.player_inv, item_slot)
 			}
 			
-			global.player_money -= item_price;
+			obj_GameManager.player_money -= item_price;
 		}
 	}
 }

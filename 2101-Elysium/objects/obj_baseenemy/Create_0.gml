@@ -24,15 +24,5 @@ shoot_once = false
 hp = hp * obj_GameManager.multi;
 hp_max = hp;
 
-base_damage *= obj_GameManager.multi;
-min_damage = base_damage - 3;
-
-if(min_damage <= 0)
-	min_damage = 1;
-
 choice_num = 0;
 save_self = 0;
-
-base_max = base_damage
-base_min = min_damage
-base_def = defense_reduction
