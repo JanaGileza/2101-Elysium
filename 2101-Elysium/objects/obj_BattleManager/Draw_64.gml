@@ -12,40 +12,9 @@ switch(state)
 	break;
 	case battle_states.win:
 		draw_text(surface_get_width(application_surface) / 2, 10, "Player Wins!")
-		createPause()
-		
-		
-		
-		w = (global.surface_width / 2)- 150
-		h =  (global.surface_height / 2) - 100
-		draw_rectangle_color(w-100,h - 100, w+400,h+300,c_gray,c_gray,c_gray,c_gray, false)
-		draw_text(w + 125, h - 100, "Victory!")
-		draw_text(w - 50, h - 20, string(global.exp_gained))
-		draw_text(w - 50, h, "Exp: ")
-		draw_text(w - 50, h + 30, "Money Earned: " + string(global.gold_gained) + " Total: " + string(global.player_money))
-		//lerp_exp = lerp(global.player_exp, global.player_exp_needed, 0.1);
-		draw_text(w - 50, h + 60, "Items Found: ")
-	
-		if(lerp_exp >= global.player_exp_needed)
-		{
-			level_up()
-		}
-		
-	
-		draw_rectangle(w + 46, h, w + 46 + (300 * (lerp_val / global.player_exp_needed)), h+20, false)
-		
-		
-		draw_rectangle_color(w+46, h, w + 346, h+20, c_black,c_black,c_black,c_black,true)
-		if(lerp_gold == 0 && global.exp_gained == 0)
-		{
-			draw_text(w + 100, h + 500, "Press any key to continue")
-		}
-		
 	break;
 	case battle_states.lose:
 		draw_text(surface_get_width(application_surface) / 2, 10, "Player loss!")
 	break;
 
 }
-
-

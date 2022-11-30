@@ -13,14 +13,6 @@ enum player_state
 }
 
 
-hp = global.bplayer_health
-hp_max = hp
-base_damage = global.bplayer_maxdamage 
-defense_reduction = global.bplayer_defense
-crit_chance = global.bplayer_critchance 
-crit_multi = global.bplayer_critmulti
-//global.bplayer_accmulti = 0.1;
-move_speed = global.bplayer_speed
 movespeed = 3;
 
 burst_count = 0
@@ -49,10 +41,3 @@ item_perf = noone
 
 defense_up = false
 turn_length = 0;
-
-
-
-min_damage = base_damage - 3;
-
-if(min_damage <= 0)
-	min_damage = 1;

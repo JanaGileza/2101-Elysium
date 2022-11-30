@@ -44,6 +44,11 @@
     {"id":{"name":"Impact_8","path":"sprites/Impact_8/Impact_8.yy",},"order":14,},
     {"id":{"name":"obj_npc1","path":"objects/obj_npc1/obj_npc1.yy",},"order":28,},
     {"id":{"name":"Pro3A_Sheet","path":"sprites/Pro3A_Sheet/Pro3A_Sheet.yy",},"order":6,},
+<<<<<<< HEAD
+=======
+    {"id":{"name":"spr_battle_fireplug1","path":"sprites/spr_battle_fireplug1/spr_battle_fireplug1.yy",},"order":9,},
+    {"id":{"name":"First_Playable_World_duplicated","path":"rooms/First_Playable_World_duplicated/First_Playable_World_duplicated.yy",},"order":7,},
+>>>>>>> jo-branch
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},"order":5,},
     {"id":{"name":"spr_bluebutton","path":"sprites/spr_bluebutton/spr_bluebutton.yy",},"order":6,},
     {"id":{"name":"spr_buffzone73","path":"sprites/spr_buffzone73/spr_buffzone73.yy",},"order":8,},
@@ -60,6 +65,13 @@
     {"id":{"name":"Impact_3","path":"sprites/Impact_3/Impact_3.yy",},"order":10,},
     {"id":{"name":"ActionCharacter_11_Slide","path":"sprites/ActionCharacter_11_Slide/ActionCharacter_11_Slide.yy",},"order":3,},
     {"id":{"name":"obj_UI_TextBox","path":"objects/obj_UI_TextBox/obj_UI_TextBox.yy",},"order":30,},
+<<<<<<< HEAD
+=======
+    {"id":{"name":"battlesign1","path":"tilesets/battlesign1/battlesign1.yy",},"order":25,},
+    {"id":{"name":"spr_towntile3","path":"sprites/spr_towntile3/spr_towntile3.yy",},"order":7,},
+    {"id":{"name":"spr_battle_sign1","path":"sprites/spr_battle_sign1/spr_battle_sign1.yy",},"order":6,},
+    {"id":{"name":"First_Playable_Town_duplicated","path":"rooms/First_Playable_Town_duplicated/First_Playable_Town_duplicated.yy",},"order":8,},
+>>>>>>> jo-branch
     {"id":{"name":"ActionCharacter_1_Idle_Battle","path":"sprites/ActionCharacter_1_Idle_Battle/ActionCharacter_1_Idle_Battle.yy",},"order":18,},
     {"id":{"name":"Muzzle_8","path":"sprites/Muzzle_8/Muzzle_8.yy",},"order":22,},
     {"id":{"name":"ActionCharacter_7_Crouch","path":"sprites/ActionCharacter_7_Crouch/ActionCharacter_7_Crouch.yy",},"order":14,},
@@ -169,6 +181,12 @@
     {"roomId":{"name":"First_Playable_Town","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},},
     {"roomId":{"name":"lose_room","path":"rooms/lose_room/lose_room.yy",},},
     {"roomId":{"name":"win_room","path":"rooms/win_room/win_room.yy",},},
+<<<<<<< HEAD
+=======
+    {"roomId":{"name":"Boss_Room","path":"rooms/Boss_Room/Boss_Room.yy",},},
+    {"roomId":{"name":"First_Playable_World_duplicated","path":"rooms/First_Playable_World_duplicated/First_Playable_World_duplicated.yy",},},
+    {"roomId":{"name":"First_Playable_Town_duplicated","path":"rooms/First_Playable_Town_duplicated/First_Playable_Town_duplicated.yy",},},
+>>>>>>> jo-branch
   ],
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Curves","folderPath":"folders/Animation Curves.yy","order":12,},
