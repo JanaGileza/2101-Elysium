@@ -7,7 +7,7 @@
     "path": "sprites/spr_mappoints_merchant/spr_mappoints_merchant.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

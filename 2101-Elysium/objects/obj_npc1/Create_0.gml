@@ -3,6 +3,6 @@
 
 
 
-path_start(Path2, (Move_Speed-4), path_action_reverse, true)
+path_start(Path2, Move_Speed-4, path_action_reverse, true)
 
 
