@@ -53,7 +53,7 @@ if(changing_room)
 	
 }
 
-if(room == First_Playable_Town)
+if(room == Town_Map)
 {
 	
 	if(instance_exists(obj_SpawnPoint))

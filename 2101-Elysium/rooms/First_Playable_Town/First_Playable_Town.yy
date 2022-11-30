@@ -35,12 +35,12 @@
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_6494E62F","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},
-    {"name":"inst_1D357744","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},
     {"name":"inst_480FC41C","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},
     {"name":"inst_248329BB","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},
     {"name":"inst_5D50D95A","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},
     {"name":"inst_7FA32B04","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},
     {"name":"inst_45F4DDF","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},
+    {"name":"inst_1D357744","path":"rooms/First_Playable_Town/First_Playable_Town.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
