@@ -40,7 +40,7 @@ if(my_turn )
 		if(shoot_once)
 		{
 			shoot_once = false
-			basic_shot(id, obj_protoplayer, Bullet_5, true)
+			basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
 			my_turn = false
 		}
 	}

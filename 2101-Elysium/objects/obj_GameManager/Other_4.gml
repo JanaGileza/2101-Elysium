@@ -11,10 +11,11 @@ if(gamestart)
 			{
 				instance_create_layer(point.x, point.y, "Instances", obj_MapPlayer)
 				current_point = point.id;
+				gamestart = false
 				break;
 			}
 	}
-	gamestart = false
+	
 }
 
 
@@ -31,8 +32,12 @@ if(changing_room)
 		if(battle_concluded)
 		{
 			battle_concluded = false
-			current_point.battle_won = true
+			if(player_escaped)
+				current_point.battle_won = false
+			else
+				current_point.battle_won = true
 		}
+		
 		for(i = 0; i < ds_list_size(completed_points); i++)
 			ds_list_find_value(completed_points, i).battle_won = true;
 	

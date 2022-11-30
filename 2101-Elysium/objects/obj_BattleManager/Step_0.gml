@@ -72,7 +72,7 @@ switch(state)
 							{
 								randomEnemy = 3;
 							}
-							else if(chance_hit(100))
+							else if(chance_hit(bufferChance))
 							{
 								randomEnemy = 2;
 							}
@@ -234,10 +234,11 @@ switch(state)
 	break;
 	
 	case battle_states.win:
-		
 		if(!wait)
 		{
 			wait = true;
+			if(instance_exists(obj_protoplayer))
+				obj_GameManager.players_current_hp = obj_protoplayer.hp;
 			global.pausedScreen = sprite_create_from_surface(application_surface,0,0, global.surface_width, global.surface_height, false, true, 0, 0);
 			//instance_deactivate_all(true)
 			//instance_activate_object(obj_GameManager)

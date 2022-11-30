@@ -17,7 +17,7 @@ if(room == Battle_Room)
 		draw_set_valign(prev_v)
 	}
 }
-else if(room == First_Playable_World)
+else if(room == World_Map)
 {
 		prev_h = draw_get_halign()
 		prev_v = draw_get_valign()

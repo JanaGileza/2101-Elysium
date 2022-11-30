@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_TownPlayer",
   "spriteId": {
-    "name": "ActionCharacter_1_Idle_large",
-    "path": "sprites/ActionCharacter_1_Idle_large/ActionCharacter_1_Idle_large.yy",
+    "name": "World_Idle",
+    "path": "sprites/World_Idle/World_Idle.yy",
   },
   "solid": false,
   "visible": true,
