@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_npc1",
   "spriteId": {
-    "name": "spr_townrobot",
-    "path": "sprites/spr_townrobot/spr_townrobot.yy",
+    "name": "spr_town_robot",
+    "path": "sprites/spr_town_robot/spr_town_robot.yy",
   },
   "solid": false,
   "visible": true,

@@ -14,7 +14,7 @@ if(keyboard_check(ord("2")))
 if(transition)
 {
 				obj_GameManager.battle_concluded = true
-				obj_GameManager.goto_point = First_Playable_World
+				obj_GameManager.goto_point = World_Map
 				obj_GameManager.enter_point = true
 }
 
@@ -285,14 +285,14 @@ switch(state)
 	case battle_states.lose:
 		draw_text(surface_get_width(application_surface) / 2, 10, "Player Lost!")
 		obj_GameManager.battle_concluded = true
-		obj_GameManager.goto_point = First_Playable_World
+		obj_GameManager.goto_point = World_Map
 		obj_GameManager.player_loss = true
 		obj_GameManager.enter_point = true
 	break;
 	case battle_states.escaped:
 		obj_GameManager.battle_concluded = true
 		obj_GameManager.player_escaped = true
-		obj_GameManager.goto_point = First_Playable_World
+		obj_GameManager.goto_point = World_Map
 		obj_GameManager.enter_point = true
 	break;
 }

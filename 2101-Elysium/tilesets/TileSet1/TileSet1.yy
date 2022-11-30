@@ -7,8 +7,8 @@
     "path": "texturegroups/Default",
   },
   "spriteId": {
-    "name": "spr_town_stand",
-    "path": "sprites/spr_town_stand/spr_town_stand.yy",
+    "name": "spr_townstand",
+    "path": "sprites/spr_townstand/spr_townstand.yy",
   },
   "tileWidth": 16,
   "tileHeight": 7,
