@@ -1,9 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-player_money = 100
+global.player_money = 100
 
 players_current_hp = 100
+
 
 global.player_inv = ds_list_create()
 global.shop = false
@@ -34,7 +35,7 @@ battle_concluded = false
 saved_point = current_point
 enter_point = false
 multi = 0
-
+player_escaped = false
 player_loss = false
 
 goto_point = noone

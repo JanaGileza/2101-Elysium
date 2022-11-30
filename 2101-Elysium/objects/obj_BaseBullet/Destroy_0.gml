@@ -3,11 +3,13 @@
 
 if(instance_exists(target))
 {
-	if(target.defense_up)
-		damage = damage / 2;
+	
 		
-		
-	target.hp -= damage;
+	if(chance_hit(parent.crit_chance))
+		damage = damage + (damage * parent.crit_multi)
+	
+	damage = damage / parent.defense_reduction
+	target.hp -= damage
 	global.total_damage += damage
 
 	if(is_end)

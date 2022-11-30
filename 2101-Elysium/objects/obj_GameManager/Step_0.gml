@@ -10,7 +10,10 @@ if(keyboard_check(ord("3")))
 
 if(keyboard_check(ord("4")))
 {
-	script_execute(ds_grid)	
+	global.player_exp++
+	
+	if(global.player_exp >= global.player_exp_needed)
+		level_up()
 }
 
 if(player_loss)
