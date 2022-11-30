@@ -10,6 +10,9 @@ switch(state)
 			case player_state.attack:
 				sprite_index = Battle_Shoot
 			break;
+			case player_state.charging:
+				sprite_index = Battle_Charge
+			break;
 
 		}
 

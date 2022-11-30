@@ -3,7 +3,7 @@
 
 /*if the left mouse button is released and over the button, the interaction is finalized and feeds
 information to the necessary components (still working on)*/
-if(room == Battle_Room)
+if(room == Battle_Room || room == Boss_Battle_Room)
 {
 	if(position_meeting(mouse_x, mouse_y, id))
 	{
@@ -56,9 +56,18 @@ if(room == Battle_Room)
 					obj_protoplayer.item_perf = ds_list_find_value(global.player_inv, pos)
 					obj_UI_Box.button_pressed = true;
 					obj_UI_Box.create_once = true;
-					ds_list_find_value(global.player_inv, pos).my_total--;
-					if(ds_list_find_value(global.player_inv,pos).my_total <= 0)
-						ds_list_delete(global.player_inv,pos)
+					if(ds_list_find_value(global.player_inv,pos).my_name == "Grenade")
+					{
+						obj_protoplayer.state = player_state.skill
+						//obj_protoplayer.skill_perf = grenade_toss
+					}
+					else
+					{
+						ds_list_find_value(global.player_inv, pos).my_total--;
+						if(ds_list_find_value(global.player_inv,pos).my_total <= 0)
+							ds_list_delete(global.player_inv,pos)
+					}
+					
 				}
 				break
 			}

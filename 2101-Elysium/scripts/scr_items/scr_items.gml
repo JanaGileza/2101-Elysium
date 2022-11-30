@@ -18,6 +18,7 @@ function create_items()
 {
 	ds_list_add(obj_merchant.items, new items_struct("health potion", 10, HEAL_HP, "Heals 10 HP"))
 	ds_list_add(obj_merchant.items, new items_struct("stamina potion", 30, HEAL_MP, "Heals 10 MP"))
+	ds_list_add(obj_merchant.items, new items_struct("Grenade", 50, ELE_DAM, "Grenade that does great damage"))
 }
 
 function item_execute(item)

@@ -60,6 +60,19 @@ function grenade_toss(obj_id, obj_target, bul_sprite, fire_now, _expType)
 			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_GrenadeBullet, bullet_struct)
 }
 
+function charge_shot(obj_id, obj_target, bul_sprite, fire_now, _expType)
+{
+				bullet_struct = 
+				{
+					this_sprite : bul_sprite,
+					parent : obj_id,
+					target : obj_target,
+					is_end : fire_now,
+					explosion_type : _expType
+				}
+	
+			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_ChargeBullet, bullet_struct)
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////

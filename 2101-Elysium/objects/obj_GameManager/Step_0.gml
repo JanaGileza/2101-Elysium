@@ -25,7 +25,7 @@ if(enter_point)
 {
 	changing_room = true
 //making sure that we are not in the Battle_Room before entering, prevents calling upon deleted objects
-	if(goto_point == Battle_Room)
+	if(goto_point == Battle_Room || goto_point == Boss_Battle_Room)
 	{
 			if(current_point.is_battle)
 			{
@@ -33,9 +33,19 @@ if(enter_point)
 				enter_point = false
 				player = obj_protoplayer
 				multi = saved_point.map_x
+				start_battle = true
 				room_goto(goto_point)
 			}
-		
+			
+			if(current_point.is_boss_battle)
+			{
+				boss_started = true
+				saved_point = current_point
+				enter_point = false
+				player = obj_protoplayer
+				multi = saved_point.map_x
+				room_goto(goto_point)
+			}
 	}
 	else if(goto_point == Town_Map)
 	{

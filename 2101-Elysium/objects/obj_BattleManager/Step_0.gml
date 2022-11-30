@@ -44,8 +44,16 @@ switch(state)
 {
 	case battle_states.start:
 	{
-		enemy_count = irandom_range(1, 3)
-		saved_enemy_count = enemy_count
+		if(obj_GameManager.boss_started)
+		{
+			enemy_count = 3
+			saved_enemy_count = enemy_count
+		}
+		else
+		{
+			enemy_count = irandom_range(1, 3)
+			saved_enemy_count = enemy_count
+		}
 		
 		for(i = 0; i < instance_number(obj_Position); i++)
 		{
@@ -60,41 +68,77 @@ switch(state)
 			{
 				if(spot_check.type == "enemy" && !spot_check.spot_filled)
 				{
-					if(enemy_count > 0)
+					if(obj_GameManager.boss_started)
 					{
-						var randomEnemy = -1;
-						var healerChance = 10 * obj_GameManager.multi;
-						var bufferChance = 10 * obj_GameManager.multi;
-						
-						if(instance_exists(obj_attackenemy))
+						if(enemy_count > 0)
 						{
-							if(chance_hit(healerChance))
+							var randomEnemy = -1
+							if(instance_exists(obj_bossenemy))
 							{
-								randomEnemy = 3;
-							}
-							else if(chance_hit(bufferChance))
-							{
-								randomEnemy = 2;
+									randomEnemy = 3;
+								
+								if(instance_exists(obj_healerenemy))
+								{
+									randomEnemy = 2;
+								}
 							}
 							else
 								randomEnemy = 1;
+						
+							var enemy = noone
+							if(randomEnemy == 1)
+								enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_bossenemy)
+						
+							if(randomEnemy == 2)
+								enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_bufferenemy)
+						
+							if(randomEnemy == 3)
+								enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_healerenemy)
+						
+							ds_list_add(enemy_list, enemy)
+							spot_check.spot_filled = true;
+							enemy_count--
 						}
-						else
-							randomEnemy = 1;
+							
+					}
+					else if(obj_GameManager.start_battle)
+					{
+						if(enemy_count > 0)
+						{
+							var randomEnemy = -1;
+							var healerChance = 10 * obj_GameManager.multi;
+							var bufferChance = 10 * obj_GameManager.multi;
 						
-						var enemy = noone
-						if(randomEnemy == 1)
-							enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_attackenemy)
+							if(instance_exists(obj_attackenemy))
+							{
+								if(chance_hit(healerChance))
+								{
+									randomEnemy = 3;
+								}
+								else if(chance_hit(bufferChance))
+								{
+									randomEnemy = 2;
+								}
+								else
+									randomEnemy = 1;
+							}
+							else
+								randomEnemy = 1;
 						
-						if(randomEnemy == 2)
-							enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_bufferenemy)
+							var enemy = noone
+							if(randomEnemy == 1)
+								enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_attackenemy)
 						
-						if(randomEnemy == 3)
-							enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_healerenemy)
+							if(randomEnemy == 2)
+								enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_bufferenemy)
 						
-						ds_list_add(enemy_list, enemy)
-						spot_check.spot_filled = true;
-						enemy_count--
+							if(randomEnemy == 3)
+								enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_healerenemy)
+						
+							ds_list_add(enemy_list, enemy)
+							spot_check.spot_filled = true;
+							enemy_count--
+						}
 					}
 					else
 						break;
@@ -102,8 +146,11 @@ switch(state)
 			}
 		}
 		state = battle_states.idle;
+		obj_turn = (obj_protoplayer.move_speed > obj_baseenemy.move_speed) ? obj_protoplayer : obj_baseenemy;
 	}
-	obj_turn = (obj_protoplayer.move_speed > obj_baseenemy.move_speed) ? obj_protoplayer : obj_baseenemy;
+	
+	
+	
 	break;
 	
 	case battle_states.idle:
@@ -169,13 +216,16 @@ switch(state)
 				obj_turn.my_turn = true;
 				obj_turn.player_target = noone
 				process_next_turn = false
-				obj_turn.state = player_state.idle
-				destroy_buttons()
-				create_main_buttons()
+				if(!obj_turn.charging)
+				{
+					obj_turn.state = player_state.idle
+					destroy_buttons()
+					create_main_buttons()
+				}
 				
 			}
 			
-			if(create_once)
+			if(create_once && !obj_turn.charging)
 			{
 				create_once = false
 				instance_create_layer(obj_protoplayer.x + 40, obj_protoplayer.y + 275,"Buttons", obj_UI_Box)

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+draw_set_font(Text_Box_Battle)
 gamestart = true
 global.player_money = 100
 
@@ -16,7 +16,9 @@ global.grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
 player_skills = ds_list_create()
 
 ds_list_add(player_skills, skill_stuct("Burst Shot", burst_shot, 10))
-ds_list_add(player_skills, skill_stuct("Grenade Toss", grenade_toss, 50))
+ds_list_add(player_skills, skill_stuct("Charge Shot", charge_shot, 50))
+ds_list_add(player_skills, skill_stuct("Grenade Toss", grenade_toss, 0))
+
 
 //make sure to set keep track of all map points
 with(obj_MapPoints)
@@ -41,3 +43,5 @@ player_loss = false
 
 goto_point = noone
 changing_room = false
+
+boss_started = false

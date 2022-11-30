@@ -15,7 +15,8 @@ if(!my_turn)
 {
 	if(turn_length > 0)
 		turn_length--;
-	state = player_state.idle
+	if(!charging)
+		state = player_state.idle
 	exit;
 }
 
@@ -61,8 +62,19 @@ if(!my_turn)
 {
 	if(turn_length > 0)
 		turn_length--;
-	state = player_state.idle
+	if(!charging)
+		state = player_state.idle
 	exit;
+}
+
+if(charging && charging_length >0)
+	state = player_state.charging
+	
+if(charging && charging_length <= 0)
+{
+	state = player_state.skill
+	skill_perf = charge_shot;
+	player_target = charge_enemy
 }
 
 
@@ -148,9 +160,43 @@ switch(state)
 				else if(skill_perf == grenade_toss)
 				{
 						script_execute(skill_perf, id, player_target, Bullet_4, true, Impact_3)
+						for(var j = 0; j < ds_list_size(global.player_inv); j++)
+						{
+							var item = ds_list_find_value(global.player_inv, j)
+							if(item.my_name == "Grenade")
+							{
+								item.my_total--;
+								if(item.my_total <= 0)
+									ds_list_delete(global.player_inv, j)
+							}
+						}
 						player_target = noone
 						my_turn = false
 						skill_perf = noone
+				}
+				else if(skill_perf == charge_shot)
+				{
+					if(charging && charging_length <= 0)
+					{
+						script_execute(skill_perf, id, player_target, Bullet_4, true, Impact_3)
+						player_target = noone
+						charge_enemy = noone
+						charging = false
+						my_turn = false
+						skill_perf = noone
+					}
+					else
+					{
+						if(!charging)
+						{
+							charging = true
+							charging_length = 2;
+							charge_enemy = player_target
+							state = player_state.charging;
+						}
+						
+					}
+					
 				}
 				else
 				{
@@ -164,7 +210,18 @@ switch(state)
 		}
 	break;
 	case player_state.charging:
-		
+	{
+		if(charging)
+		{
+			charging_length--
+			var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
+			text_box.msg = my_name + " is charging an attack"
+			my_turn = false;
+			obj_BattleManager.next_turn = true
+			obj_BattleManager.process_next_turn = true
+			
+		}
+	}	
 	break;
 	case player_state.defend:
 		//defense_up = true

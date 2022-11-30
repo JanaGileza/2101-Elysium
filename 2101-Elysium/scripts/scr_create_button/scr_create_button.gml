@@ -32,11 +32,31 @@ function create_sub_buttons(list, state)
 	amount = ds_list_size(list)
 	for(i = 0; i < amount; i++)
 	{
+		var has_grenades = false
 		next_pos = 75 * i
 		if(obj_protoplayer.state == player_state.item)
-		button_struct(288, 650 + next_pos, 0, false, string(ds_list_find_value(list, i).my_name) + " x " + string(ds_list_find_value(list,i).my_total), state, true, i)
+			button_struct(288, 650 + next_pos, 0, false, string(ds_list_find_value(list, i).my_name) + " x " + string(ds_list_find_value(list,i).my_total), state, true, i)
 		else
-			button_struct(288, 650 + next_pos, 0, false, string(ds_list_find_value(list, i).my_name), state, true, i)
+		{
+			if(ds_list_find_value(list, i).my_name == "Grenade Toss")
+			{
+				
+				for(var j = 0; j < ds_list_size(global.player_inv); j++)
+				{
+					var item = ds_list_find_value(global.player_inv, j)
+					
+					if(item.my_name == "Grenade")
+					{
+						has_grenades = true
+						break;
+					}
+				}
+				if(has_grenades)
+					button_struct(288, 650 + next_pos, 0, false, string(ds_list_find_value(list, i).my_name), state, true, i)
+			}
+			else
+				button_struct(288, 650 + next_pos, 0, false, string(ds_list_find_value(list, i).my_name), state, true, i)
+		}
 		
 	}
 	

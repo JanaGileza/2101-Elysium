@@ -29,3 +29,26 @@ function createPause()
 	}
 
 }
+
+function boss_skill_chance()
+{
+	var prob = irandom(99);
+	
+	//if(prob <= 9)
+	//{
+	//	return 3;
+	//}
+	
+	if(prob > 9 && prob <= 29)
+	{
+		return 1;
+	}
+	
+	if(prob > 29 && prob <= 59)
+	{
+		return 2;
+	}
+	
+	return 0;
+
+}

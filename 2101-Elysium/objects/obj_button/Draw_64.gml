@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //only drawing when needed
-if(room == Battle_Room)
+if(room == Battle_Room || room == Boss_Battle_Room)
 {
 	if(obj_protoplayer.my_turn)
 	{

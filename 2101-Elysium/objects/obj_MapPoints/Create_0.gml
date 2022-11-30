@@ -6,7 +6,7 @@ if(is_battle)
 else if(is_merchant) 
 	contained_room = Town_Map
 else if(is_boss_battle)
-	contained_room = win_room
+	contained_room = Boss_Battle_Room
 
 
 

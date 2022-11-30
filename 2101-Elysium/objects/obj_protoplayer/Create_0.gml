@@ -53,6 +53,7 @@ turn_length = 0;
 
 charging = false
 charging_length = 0;
+charge_enemy = noone
 
 min_damage = base_damage - 3;
 
