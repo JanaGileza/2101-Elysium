@@ -34,7 +34,7 @@ var draw_y = (y + height/6.5)  + gui_padding
 draw_maxW = width - (draw_x + gui_padding);
 
 draw_text_ext(draw_x, draw_y, msg, -1, draw_maxW)
-draw_text_ext(draw_x, draw_y + 50, "Press Enter To Continue", -1, draw_maxW)
+draw_text_ext(draw_x, draw_y + 50, "Press a Key To Continue", -1, draw_maxW)
 
 
 draw_set_halign(prev_h)
