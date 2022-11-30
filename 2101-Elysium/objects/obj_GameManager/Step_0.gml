@@ -37,7 +37,7 @@ if(enter_point)
 			}
 		
 	}
-	else if(goto_point == First_Playable_Town)
+	else if(goto_point == Town_Map)
 	{
 				saved_point = current_point
 				enter_point = false

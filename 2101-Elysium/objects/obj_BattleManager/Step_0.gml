@@ -11,7 +11,14 @@ if(keyboard_check(ord("2")))
 	state = battle_states.lose
 }
 
-if(wait)
+if(transition)
+{
+				obj_GameManager.battle_concluded = true
+				obj_GameManager.goto_point = World_Map
+				obj_GameManager.enter_point = true
+}
+
+if(wait && state != battle_states.win)
 	exit;
 /////////////////////////////////////////////
 
@@ -37,7 +44,7 @@ switch(state)
 {
 	case battle_states.start:
 	{
-		enemy_count = irandom_range(1,3)
+		enemy_count = irandom_range(1, 3)
 		saved_enemy_count = enemy_count
 		
 		for(i = 0; i < instance_number(obj_Position); i++)
@@ -55,7 +62,37 @@ switch(state)
 				{
 					if(enemy_count > 0)
 					{
-						instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_baseenemy)
+						var randomEnemy = -1;
+						var healerChance = 10 * obj_GameManager.multi;
+						var bufferChance = 10 * obj_GameManager.multi;
+						
+						if(instance_exists(obj_attackenemy))
+						{
+							if(chance_hit(healerChance))
+							{
+								randomEnemy = 3;
+							}
+							else if(chance_hit(100))
+							{
+								randomEnemy = 2;
+							}
+							else
+								randomEnemy = 1;
+						}
+						else
+							randomEnemy = 1;
+						
+						var enemy = noone
+						if(randomEnemy == 1)
+							enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_attackenemy)
+						
+						if(randomEnemy == 2)
+							enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_bufferenemy)
+						
+						if(randomEnemy == 3)
+							enemy = instance_create_layer(spot_check.x, spot_check.y,"Instances", obj_healerenemy)
+						
+						ds_list_add(enemy_list, enemy)
 						spot_check.spot_filled = true;
 						enemy_count--
 					}
@@ -84,7 +121,7 @@ switch(state)
 		
 		if(instance_exists(obj_UI_TextBox))
 		{
-			if(keyboard_check(vk_enter))
+			if(keyboard_check(vk_anykey))
 			{
 				wait = true
 				alarm[11] = 0.5 * room_speed
@@ -186,7 +223,7 @@ switch(state)
 		}
 		else
 		{
-			if(check_player.hp < 0)
+			if(check_player.hp <= 0)
 				state = battle_states.lose
 			else
 				state = battle_states.idle
@@ -197,23 +234,65 @@ switch(state)
 	break;
 	
 	case battle_states.win:
-		draw_text(surface_get_width(application_surface) / 2, 10, "Player Wins!")
-		obj_GameManager.battle_concluded = true
-		obj_GameManager.goto_point = First_Playable_World
-		obj_GameManager.enter_point = true
+		
+		if(!wait)
+		{
+			wait = true;
+			global.pausedScreen = sprite_create_from_surface(application_surface,0,0, global.surface_width, global.surface_height, false, true, 0, 0);
+			//instance_deactivate_all(true)
+			//instance_activate_object(obj_GameManager)
+			lerp_exp = global.player_exp
+			lerp_gold = global.gold_gained
+			global.player_exp += global.exp_gained
+			
+		}
+		
+		if(text_box_delay)
+		{
+			text_box_delay = false
+			alarm[10] = 0.1 * room_speed
+			
+			if(global.exp_gained > 0)
+			{
+				global.exp_gained--;
+				lerp_exp++;
+			}
+			
+			if(lerp_gold > 0)
+			{
+				global.player_money++;
+				lerp_gold--;
+			}
+			
+			
+		}
+		
+		lerp_val = lerp(lerp_val, lerp_exp, 0.1)
+		if(lerp_gold == 0 && global.exp_gained == 0)
+		{
+			if(keyboard_check(vk_anykey))
+			{
+				transition = true;
+				obj_GameManager.player_escaped = false;
+			}
+		}
+		//draw_text(surface_get_width(application_surface) / 2, 10, "Player Wins!")
+		//obj_GameManager.battle_concluded = true
+		//obj_GameManager.goto_point = First_Playable_World
+		//obj_GameManager.enter_point = true
 	break;
 	
 	case battle_states.lose:
-	
 		draw_text(surface_get_width(application_surface) / 2, 10, "Player Lost!")
 		obj_GameManager.battle_concluded = true
-		obj_GameManager.goto_point = First_Playable_World
+		obj_GameManager.goto_point = World_Map
 		obj_GameManager.player_loss = true
 		obj_GameManager.enter_point = true
 	break;
 	case battle_states.escaped:
 		obj_GameManager.battle_concluded = true
-		obj_GameManager.goto_point = First_Playable_World
+		obj_GameManager.player_escaped = true
+		obj_GameManager.goto_point = World_Map
 		obj_GameManager.enter_point = true
 	break;
 }

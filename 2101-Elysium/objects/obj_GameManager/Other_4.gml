@@ -1,4 +1,4 @@
-/// @description Insert description here
+ /// @description Insert description here
 // You can write your code in this editor
 
 //if its the start of the game, create the player at the start of the first node only once. 
@@ -49,7 +49,7 @@ if(changing_room)
 	
 }
 
-if(room == First_Playable_Town)
+if(room == Town_Map)
 {
 	
 	if(instance_exists(obj_SpawnPoint))

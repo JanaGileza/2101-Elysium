@@ -73,7 +73,7 @@ if(room == Battle_Room)
 	}
 	pressed = false
 }
-else if(room == First_Playable_World)
+else if(room == World_Map)
 {
 	if(position_meeting(mouse_x, mouse_y, id))
 	{
