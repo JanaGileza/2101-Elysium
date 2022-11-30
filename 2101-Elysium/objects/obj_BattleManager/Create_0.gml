@@ -19,14 +19,20 @@ global.total_damage = 0;
 
 randomize()
 
+lerp_exp = 0;
 process_next_turn = false;
 
 room_speed = 60
 
 turn_order = ds_priority_create()
+enemy_list = ds_list_create()
 next_turn = true;
 enemy_count = 0;
 saved_enemy_count = 0
 counter = 0;
 create_once = true
 wait = false
+lerp_val = 0;
+lerp_gold = 0;
+text_box_delay = true;
+transition = false
