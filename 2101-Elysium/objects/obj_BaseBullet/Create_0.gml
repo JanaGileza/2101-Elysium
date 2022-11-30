@@ -7,4 +7,5 @@ if(target == obj_protoplayer)
 
 
 accuracy = parent.accuracy;
-damage = parent.base_damage;
+damage = round(irandom_range(parent.min_damage,parent.base_damage));
+
