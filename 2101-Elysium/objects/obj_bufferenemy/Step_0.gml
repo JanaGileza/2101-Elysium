@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+buff_animation_timer--
+buffer_attack_animation_timer--
 if(my_turn )
 {
 
@@ -21,14 +22,18 @@ if(my_turn )
 			comrade.str_buffed = true;
 			comrade.turn_length_s += 3;
 			var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
-			text_box.msg = string(my_name) + " gave a power boost to " + string(comrade.my_name) 
+			text_box.msg = string(my_name) + " gave a power boost to " + string(comrade.my_name)
+			buff_animation_timer = 30
+			sprite_index = spr_buffer_buff
 		}
-		else
+		else 
 		{
 			comrade.def_buffed = true;
 			comrade.turn_length_d += 3;
 			var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 			text_box.msg = string(my_name) + " gave a defense boost to " + string(comrade.my_name) 
+			buff_animation_timer = 30
+			sprite_index = spr_buffer_buff
 		}
 		
 		my_turn = false
@@ -41,6 +46,8 @@ if(my_turn )
 		{
 			shoot_once = false
 			basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
+			buffer_attack_animation_timer = 30
+			sprite_index = spr_buffer_attack
 			my_turn = false
 		}
 	}
@@ -49,6 +56,10 @@ else
 	shoot_once = true;
 if(hp <= 0)
 	instance_destroy()
+if(buff_animation_timer <= 0 && buffer_attack_animation_timer <= 0)
+	sprite_index = spr_buffer_idle
+	
+
 
 
 

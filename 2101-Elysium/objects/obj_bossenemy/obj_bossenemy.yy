@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_bossenemy",
   "spriteId": {
-    "name": "spr_alien_placeholder_boss",
-    "path": "sprites/spr_alien_placeholder_boss/spr_alien_placeholder_boss.yy",
+    "name": "spr_boss_idle",
+    "path": "sprites/spr_boss_idle/spr_boss_idle.yy",
   },
   "solid": false,
   "visible": true,

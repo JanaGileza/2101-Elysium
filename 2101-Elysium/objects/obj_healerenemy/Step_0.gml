@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+heal_animation_timer--
+healer_attack_animation_timer--
 if(my_turn )
 {
 	if(hp < hp_max /2)
@@ -16,7 +17,11 @@ if(my_turn )
 		hp += heal_amount
 		var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 		text_box.msg = string(my_name) + " healed " + string(heal_amount) 
+		sprite_index = spr_healer1_heal
+		 heal_animation_timer = 20
 		my_turn = false
+		
+		
 		obj_BattleManager.next_turn = true
 		obj_BattleManager.process_next_turn = true
 	}
@@ -45,6 +50,8 @@ if(my_turn )
 			var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 			text_box.msg = string(my_name) + " healed " + string(saving_comrade.my_name) + "for " + string(heal_amount)
 			saving_comrade = noone
+			sprite_index = spr_healer1_heal
+			heal_animation_timer = 20
 			my_turn = false
 			obj_BattleManager.next_turn = true
 			obj_BattleManager.process_next_turn = true
@@ -55,6 +62,8 @@ if(my_turn )
 			{
 				shoot_once = false
 				basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
+				healer_attack_animation_timer = 20
+				sprite_index = spr_healer1_attack
 				my_turn = false
 			}
 		}
@@ -64,6 +73,9 @@ else
 	shoot_once = true;
 if(hp <= 0)
 	instance_destroy()
+	
+if(heal_animation_timer <= 0 && healer_attack_animation_timer <=0)
+	sprite_index = spr_healer1_idle
 
 
 

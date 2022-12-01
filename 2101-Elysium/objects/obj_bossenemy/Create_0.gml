@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+boss_attack_animation_timer = 0
 use_skill = false;
 use_skill_chance = 35;
 skill_choose = 0;

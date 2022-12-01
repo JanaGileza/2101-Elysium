@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_healerenemy",
   "spriteId": {
-    "name": "spr_alien_placeholder_healer",
-    "path": "sprites/spr_alien_placeholder_healer/spr_alien_placeholder_healer.yy",
+    "name": "spr_healer1_idle",
+    "path": "sprites/spr_healer1_idle/spr_healer1_idle.yy",
   },
   "solid": false,
   "visible": true,

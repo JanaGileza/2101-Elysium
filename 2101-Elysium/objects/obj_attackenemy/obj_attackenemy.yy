@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_attackenemy",
   "spriteId": {
-    "name": "spr_alien_placeholder_attack",
-    "path": "sprites/spr_alien_placeholder_attack/spr_alien_placeholder_attack.yy",
+    "name": "spr_attacker1_idle",
+    "path": "sprites/spr_attacker1_idle/spr_attacker1_idle.yy",
   },
   "solid": false,
   "visible": true,

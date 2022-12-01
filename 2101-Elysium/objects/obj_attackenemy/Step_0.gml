@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+attack_animation_timer--
 
 if(my_turn )
 {
@@ -26,6 +27,8 @@ if(my_turn )
 		{
 			shoot_once = false
 			basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
+			sprite_index = spr_attacker_attack1
+			attack_animation_timer = 30
 			my_turn = false
 		}
 	}
@@ -34,3 +37,6 @@ else
 	shoot_once = true;
 if(hp <= 0)
 	instance_destroy()
+
+if(attack_animation_timer <= 0)
+	sprite_index = spr_attacker1_idle

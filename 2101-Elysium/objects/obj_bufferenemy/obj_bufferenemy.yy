@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_bufferenemy",
   "spriteId": {
-    "name": "spr_alien_placeholder_buffer",
-    "path": "sprites/spr_alien_placeholder_buffer/spr_alien_placeholder_buffer.yy",
+    "name": "spr_buffer_idle",
+    "path": "sprites/spr_buffer_idle/spr_buffer_idle.yy",
   },
   "solid": false,
   "visible": true,

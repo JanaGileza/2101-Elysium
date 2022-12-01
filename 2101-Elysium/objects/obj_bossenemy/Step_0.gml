@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 //event_inherited();
-
+boss_attack_animation_timer--
 if(my_turn )
 {
 	if(chance_hit(use_skill_chance))
@@ -55,6 +55,8 @@ if(my_turn )
 					{				
 						script_execute(burst_shot, id, obj_protoplayer, Bullet_6, true, Impact_6 )
 						target = noone
+						boss_attack_animation_timer = 20
+						sprite_index = spr_boss_attack
 						my_turn = false
 						burst_count = 0
 					}
@@ -71,6 +73,8 @@ if(my_turn )
 			{
 					script_execute(grenade_toss, id, target, Bullet_4, true, Impact_3)
 					target = noone
+					boss_attack_animation_timer = 20
+					sprite_index = spr_boss_attack
 					my_turn = false
 			}
 			break;
@@ -82,6 +86,8 @@ if(my_turn )
 		{
 			shoot_once = false
 			basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
+			boss_attack_animation_timer = 30
+			sprite_index = spr_boss_attack
 			my_turn = false
 		}
 	}
@@ -90,3 +96,5 @@ else
 	shoot_once = true;
 if(hp <= 0)
 	instance_destroy()
+if(boss_attack_animation_timer <= 0)
+	sprite_index = spr_boss_idle
