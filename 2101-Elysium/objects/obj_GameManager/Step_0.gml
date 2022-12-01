@@ -49,6 +49,7 @@ if(enter_point)
 				multi = saved_point.map_x
 				room_goto(goto_point)
 			}
+		
 	}
 	else if(goto_point == Town_Map)
 	{

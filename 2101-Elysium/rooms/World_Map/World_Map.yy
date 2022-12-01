@@ -22,7 +22,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3D75237F","properties":[],"isDnd":false,"objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.49473685,"scaleY":0.3469388,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":true,"inheritItemSettings":false,"x":1024.0,"y":1184.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4921C304","properties":[],"isDnd":false,"objectId":{"name":"obj_GameManager","path":"objects/obj_GameManager/obj_GameManager.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":32.0,"y":32.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1A9C610B","properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"map_x","path":"objects/obj_MapPoints/obj_MapPoints.yy",},"objectId":{"name":"obj_MapPoints","path":"objects/obj_MapPoints/obj_MapPoints.yy",},"value":"0",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"map_y","path":"objects/obj_MapPoints/obj_MapPoints.yy",},"objectId":{"name":"obj_MapPoints","path":"objects/obj_MapPoints/obj_MapPoints.yy",},"value":"0",},
@@ -96,7 +95,6 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_4921C304","path":"rooms/World_Map/World_Map.yy",},
     {"name":"inst_1A9C610B","path":"rooms/World_Map/World_Map.yy",},
     {"name":"inst_79F44F2B","path":"rooms/World_Map/World_Map.yy",},
     {"name":"inst_3302298A","path":"rooms/World_Map/World_Map.yy",},

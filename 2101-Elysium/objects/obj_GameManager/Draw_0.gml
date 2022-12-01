@@ -3,9 +3,12 @@
 
 //drawing to show inventory right now
 
-for(i = 0; i <ds_list_size(global.player_inv); i++) 
+if(global.debug)
 {
-	draw_text(player.x, player.y + (i * 30), global.player_inv[| i]);
+	for(i = 0; i <ds_list_size(global.player_inv); i++) 
+	{
+		draw_text(player.x, player.y + (i * 30), global.player_inv[| i]);
+	}
 }
 
 

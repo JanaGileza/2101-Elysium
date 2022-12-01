@@ -14,6 +14,7 @@ msg = ""
 msg_char = 0
 msg_speed = 1;
 
+depth = -100
 
 var gui_width = display_get_gui_width()
 var gui_height = display_get_gui_height()

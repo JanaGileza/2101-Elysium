@@ -10,13 +10,16 @@ if(create_once)
 }
 
 //checking to make sure a button has been completely pressed before acting
-if(button_pressed)
+if(button_pressed )
 {
 	switch(decision_made)
 	{
 		case 0:
-			obj_GameManager.goto_point = obj_GameManager.current_point.contained_room
-			obj_GameManager.enter_point = true
+			if(!obj_GameManager.enter_point)
+			{
+				obj_GameManager.goto_point = obj_GameManager.current_point.contained_room
+				obj_GameManager.enter_point = true
+			}
 			
 		break;
 		case 1:

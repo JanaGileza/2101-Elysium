@@ -15,7 +15,7 @@ if(my_turn )
 		}
 		else
 			var random_comrade = 0
-		show_message(random_comrade)
+	
 		var comrade = ds_list_find_value(obj_BattleManager.enemy_list, random_comrade)
 		if(chance_hit(75))
 		{

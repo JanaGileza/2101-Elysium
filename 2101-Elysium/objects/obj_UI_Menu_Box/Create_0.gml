@@ -14,3 +14,5 @@ decision_made = 0
 button_pressed = false
 
 text = ""
+
+depth = -100

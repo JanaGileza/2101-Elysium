@@ -2,8 +2,18 @@
 // You can write your code in this editor
 
 //if its the start of the game, create the player at the start of the first node only once. 
+
+if(room == Title_Screen)
+	exit;
+
 if(gamestart)
 {
+	with(obj_MapPoints)
+	{
+		ds_list_add(global.TotalMap, id)
+	}
+	current_point = ds_list_find_value(global.TotalMap, 0)
+	saved_point = current_point
 	for(i = 0; i < ds_list_size(global.TotalMap); i++)
 	{
 		point = ds_list_find_value(global.TotalMap, i)

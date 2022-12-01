@@ -54,7 +54,7 @@
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"hp_max","path":"objects/obj_BaseBattle/obj_BaseBattle.yy",},"objectId":{"name":"obj_BaseBattle","path":"objects/obj_BaseBattle/obj_BaseBattle.yy",},"value":"10",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "battle",
+    "path": "folders/Objects/battle.yy",
   },
 }

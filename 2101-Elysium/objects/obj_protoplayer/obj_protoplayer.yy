@@ -48,7 +48,7 @@
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"move_speed","path":"objects/obj_BaseBattle/obj_BaseBattle.yy",},"objectId":{"name":"obj_BaseBattle","path":"objects/obj_BaseBattle/obj_BaseBattle.yy",},"value":"100",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "battle",
+    "path": "folders/Objects/battle.yy",
   },
 }

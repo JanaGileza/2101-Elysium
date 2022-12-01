@@ -6,6 +6,7 @@ global.player_money = 100
 
 players_current_hp = 100
 
+global.debug = false;
 
 global.player_inv = ds_list_create()
 global.shop = false
@@ -21,18 +22,17 @@ ds_list_add(player_skills, skill_stuct("Grenade Toss", grenade_toss, 0))
 
 
 //make sure to set keep track of all map points
-with(obj_MapPoints)
-{
-
-	ds_list_add(global.TotalMap, id)
-}
+//with(obj_MapPoints)
+//{
+//	ds_list_add(global.TotalMap, id)
+//}
 
 completed_points = ds_list_create()
 
 player = noone
 
 gamestart = false
-current_point = ds_list_find_value(global.TotalMap, 0)
+current_point = noone
 start_battle = false
 battle_concluded = false
 saved_point = current_point
