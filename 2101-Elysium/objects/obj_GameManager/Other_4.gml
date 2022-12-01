@@ -52,6 +52,7 @@ if(changing_room)
 	
 }
 
+
 if(room == Town_Map)
 {
 	
@@ -59,9 +60,13 @@ if(room == Town_Map)
 	{
 		instance_create_layer(obj_SpawnPoint.x, obj_SpawnPoint.y, "Instances", obj_TownPlayer)
 	}
+	
+	
 }
 
 if(room == win_room)
 {
 	show_message("Boss battle not ready yet :)")
 }
+
+
