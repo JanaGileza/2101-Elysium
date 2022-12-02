@@ -53,9 +53,6 @@ if(changing_room)
 		
 		for(i = 0; i < ds_list_size(completed_points); i++)
 			ds_list_find_value(completed_points, i).battle_won = true;
-	
-		
-		
 			
 			move_pos = {move_x : current_point.map_x,
 						 move_y : current_point.map_y}

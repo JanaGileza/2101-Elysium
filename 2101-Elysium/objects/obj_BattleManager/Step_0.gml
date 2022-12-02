@@ -288,7 +288,10 @@ switch(state)
 		{
 			wait = true;
 			if(instance_exists(obj_protoplayer))
+			{
 				obj_GameManager.players_current_hp = obj_protoplayer.hp;
+				obj_GameManager.players_current_mp = obj_protoplayer.mana
+			}
 			global.pausedScreen = sprite_create_from_surface(application_surface,0,0, global.surface_width, global.surface_height, false, true, 0, 0);
 			//instance_deactivate_all(true)
 			//instance_activate_object(obj_GameManager)

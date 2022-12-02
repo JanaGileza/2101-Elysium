@@ -27,15 +27,31 @@ function item_execute(item)
 	{
 		case "health potion":
 		{
-			if(obj_protoplayer.hp <= obj_protoplayer.hp_max)
-				obj_protoplayer.hp += 10;
+			if(obj_protoplayer.hp < obj_protoplayer.hp_max)
+			{
+				var heal_amount = 10 * global.player_level;
+				if(heal_amount > 50)
+					heal_amount = 50;
+				obj_protoplayer.hp += heal_amount;
+				if(obj_protoplayer.hp > obj_protoplayer.hp_max)
+					obj_protoplayer.hp = obj_protoplayer.hp_max;
+			}
 			else
 				return false
 		}
 		break;
 		case "stamina potion":
-			if(obj_protoplayer.mana <= obj_protoplayer.mana_max)
-				obj_protoplayer.mana += 10;
+			if(obj_protoplayer.mana < obj_protoplayer.mana_max)
+			{
+				var mana_amount = 10 * global.player_level;
+				if(mana_amount > 50)
+					mana_amount = 50;
+					
+				obj_protoplayer.mana += mana_amount;
+				
+				if(obj_protoplayer.mana > obj_protoplayer.mana_max)
+					obj_protoplayer.mana = obj_protoplayer.mana_max;
+			}
 			else
 				return false
 		break;

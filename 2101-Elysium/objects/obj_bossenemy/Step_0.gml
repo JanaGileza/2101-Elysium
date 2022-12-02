@@ -69,15 +69,31 @@ if(my_turn )
 			break;
 			
 			//charge_shot
-			case 3:
-			{
-					script_execute(grenade_toss, id, target, Bullet_4, true, Impact_3)
-					target = noone
-					boss_attack_animation_timer = 20
-					sprite_index = spr_boss_attack
-					my_turn = false
-			}
-			break;
+			//case 3:
+			//{
+			//		if(charging && charging_length <= 0)
+			//		{
+			//			script_execute(charge_shot, id, obj_protoplayer, Bullet_4, true, Impact_3)
+			//			target = noone
+			//			charging = false
+			//			my_turn = false
+
+			//		}
+			//		else
+			//		{
+			//			if(!charging)
+			//			{
+			//				charging = true
+			//				charging_length = 2;
+			//				var temp_struct = { parent : id }
+			//				instance_create_layer(x - (40 * image_xscale), y, "Instances", obj_chargingEffect, temp_struct)
+			//				charge_enemy = player_target
+			//				state = player_state.charging;
+			//			}
+						
+			//		}
+			//}
+			//break;
 		}
 	}
 	else

@@ -16,3 +16,6 @@ basic_fire = true
 fire_now = true
 
 burst_count = 0
+
+charging = false
+charging_length = 0;

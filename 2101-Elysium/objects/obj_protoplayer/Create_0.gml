@@ -16,6 +16,7 @@ enum player_state
 
 hp = obj_GameManager.players_current_hp;
 hp_max = global.bplayer_health
+mana_max = global.bplayer_mana
 base_damage = global.bplayer_maxdamage 
 defense_reduction = global.bplayer_defense
 crit_chance = global.bplayer_critchance 
@@ -40,6 +41,7 @@ state = player_state.idle
 fire_rate = 3
 
 image_speed = 0.2
+
 
 create_once = true
 

@@ -5,6 +5,7 @@ gamestart = true
 global.player_money = 100
 
 players_current_hp = 100
+players_current_mp = 100
 
 global.debug = false;
 

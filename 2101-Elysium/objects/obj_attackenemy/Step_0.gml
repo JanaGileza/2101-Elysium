@@ -4,22 +4,32 @@ attack_animation_timer--
 
 if(my_turn )
 {
-	if(hp < hp_max /2)
-	{
-		save_self = 50;
-	}
-	else
-		save_self = 0;
+	if(chance_hit(skill_chance))
+		use_skill = true
 	
-	if(chance_hit(save_self))
+	if(use_skill)
 	{
-		var heal_amount = (hp_max / 3)
-		hp += heal_amount
-		var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
-		text_box.msg = string(my_name) + " healed " + string(heal_amount) 
-		my_turn = false
-		obj_BattleManager.next_turn = true
-		obj_BattleManager.process_next_turn = true
+		if(fire_now)
+				{
+					fire_now = false;
+					alarm[5] = 0.05 * room_speed;
+					burst_count++
+					if(burst_count > 2)
+					{				
+						script_execute(burst_shot, id, obj_protoplayer, Bullet_6, true, Impact_6 )
+						target = noone
+						attack_animation_timer = 30
+						sprite_index = spr_attacker_attack1
+						my_turn = false
+						burst_count = 0
+						use_skill = false
+					}
+					else
+					{
+						script_execute(burst_shot, id, obj_protoplayer, Bullet_6, false, Impact_6 )
+					}
+					
+				}
 	}
 	else
 	{
