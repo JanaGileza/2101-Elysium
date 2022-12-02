@@ -5,3 +5,5 @@
 pressed = false
 
 depth = -1000
+
+mana_cost = 0;

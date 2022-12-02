@@ -191,6 +191,8 @@ switch(state)
 						{
 							charging = true
 							charging_length = 2;
+							var temp_struct = { parent : id }
+							instance_create_layer(x - (40 * image_xscale), y, "Instances", obj_chargingEffect, temp_struct)
 							charge_enemy = player_target
 							state = player_state.charging;
 						}
