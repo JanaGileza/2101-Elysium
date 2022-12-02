@@ -37,7 +37,8 @@ if(enter_point)
 				player = obj_protoplayer
 				multi = saved_point.map_x
 				start_battle = true
-				room_goto(goto_point)
+				//room_goto(goto_point)
+				start_transition(goto_point, seq_fadein, seq_fadeout)
 			}
 			
 			if(current_point.is_boss_battle)

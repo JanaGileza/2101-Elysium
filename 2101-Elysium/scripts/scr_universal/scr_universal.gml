@@ -52,3 +52,4 @@ function boss_skill_chance()
 	return 0;
 
 }
+

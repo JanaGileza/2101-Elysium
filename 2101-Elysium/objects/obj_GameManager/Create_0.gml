@@ -8,6 +8,9 @@ players_current_hp = 100
 
 global.debug = false;
 
+//global.changing = false;
+//global.currentRoom = World_Map
+
 global.player_inv = ds_list_create()
 global.shop = false
 
