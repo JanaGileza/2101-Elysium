@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var _inst = instance_create_layer(x, y, opening_narration, obj_dialogue);
+var _inst = instance_create_layer(global.surface_width / 2, global.surface_height / 2, opening_narration, obj_dialogue);
 with(_inst) {
 	draw_set_font(fnt_dialogue);
 	draw_set_color(c_green);
