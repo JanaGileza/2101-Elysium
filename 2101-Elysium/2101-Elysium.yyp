@@ -138,6 +138,7 @@
     {"id":{"name":"Lite3A_Gif","path":"sprites/Lite3A_Gif/Lite3A_Gif.yy",},"order":2,},
     {"id":{"name":"obj_goback","path":"objects/obj_goback/obj_goback.yy",},"order":3,},
     {"id":{"name":"Bullet_3","path":"sprites/Bullet_3/Bullet_3.yy",},"order":2,},
+    {"id":{"name":"snd_town","path":"sounds/snd_town/snd_town.yy",},"order":4,},
     {"id":{"name":"snd_titlescreen","path":"sounds/snd_titlescreen/snd_titlescreen.yy",},"order":1,},
     {"id":{"name":"obj_UI_Box","path":"objects/obj_UI_Box/obj_UI_Box.yy",},"order":9,},
     {"id":{"name":"spr_shoman_display","path":"sprites/spr_shoman_display/spr_shoman_display.yy",},"order":1,},

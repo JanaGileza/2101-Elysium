@@ -24,6 +24,15 @@ switch(current_room)
 	}
 	break;
 	
+	case Town_Map:
+	if(!audio_is_playing(snd_town))
+	{
+		audio_stop_all()
+		audio_play_sound(snd_town, 0 , 1)
+		same_room = false;
+	}
+	break;
+	
 	case Battle_Room:
 	if(!audio_is_playing(snd_normalbattle))
 	{
