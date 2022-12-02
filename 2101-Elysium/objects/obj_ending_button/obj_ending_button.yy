@@ -1,13 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_opening_button",
-  "spriteId": {
-    "name": "spr_buffzone73",
-    "path": "sprites/spr_buffzone73/spr_buffzone73.yy",
-  },
+  "name": "obj_ending_button",
+  "spriteId": null,
   "solid": false,
-  "visible": false,
+  "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

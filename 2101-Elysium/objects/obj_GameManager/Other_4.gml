@@ -75,9 +75,5 @@ if(room == Town_Map)
 	
 }
 
-if(room == win_room)
-{
-	show_message("Boss battle not ready yet :)")
-}
 
 

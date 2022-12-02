@@ -270,6 +270,7 @@ switch(state)
 		if(check_enemies <= 0)
 		{
 			state = battle_states.win
+			room_goto(win_room)
 		}
 		else
 		{
