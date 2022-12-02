@@ -8,6 +8,6 @@ else if(is_merchant)
 else if(is_boss_battle)
 	contained_room = Boss_Battle_Room
 
-
+interact = false;
 
 

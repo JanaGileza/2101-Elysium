@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+interact = false;
 //change sprite depending on the state of the button
 
 if(battle_won)

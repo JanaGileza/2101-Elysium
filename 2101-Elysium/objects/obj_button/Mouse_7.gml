@@ -14,7 +14,7 @@ if(room == Battle_Room || room == Boss_Battle_Room)
 				case CANCEL_SELECT:
 					if(obj_protoplayer.skill_perf != noone)
 					{
-						obj_protoplayer.mana += ds_list_find_value(obj_GameManager.player_skills, pos).my_cost
+						obj_protoplayer.mana += global.mana_cost
 						obj_protoplayer.skill_perf = noone
 					}
 					obj_protoplayer.state = player_state.idle
@@ -32,9 +32,10 @@ if(room == Battle_Room || room == Boss_Battle_Room)
 				break;
 				case SKILL_SELECT:
 				{
-					if(obj_protoplayer.mana >= ds_list_find_value(obj_GameManager.player_skills, pos).my_cost)
+					global.mana_cost = ds_list_find_value(obj_GameManager.player_skills, pos).my_cost
+					if(obj_protoplayer.mana >= mana_cost)
 					{
-						obj_protoplayer.mana -= ds_list_find_value(obj_GameManager.player_skills, pos).my_cost
+						obj_protoplayer.mana -= global.mana_cost
 						//obj_protoplayer.player_target = instance_find(obj_baseenemy, pos)
 						obj_protoplayer.skill_perf = ds_list_find_value(obj_GameManager.player_skills, pos).scr_per
 						obj_UI_Box.button_pressed = true
@@ -44,6 +45,7 @@ if(room == Battle_Room || room == Boss_Battle_Room)
 					}
 					else
 					{
+						global.mana_cost = 0
 						var text_box = instance_create_layer(surface_get_width(application_surface) / 2, surface_get_height(application_surface) / 2, "Instances",obj_UI_TextBox)
 						text_box.msg = "Not enough MP"
 						text_box.is_error = true

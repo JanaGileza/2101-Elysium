@@ -7,6 +7,8 @@ global.player_exp_needed = 10;
 global.exp_gained = 0;
 global.gold_gained = 0;
 
+global.mana_cost = 0
+
 global.bplayer_health = 100
 global.bplayer_maxdamage = 1;
 global.bplayer_defense = 1;

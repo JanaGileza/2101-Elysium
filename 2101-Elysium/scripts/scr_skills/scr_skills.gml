@@ -32,8 +32,7 @@ function basic_shot(obj_id, obj_target, bul_sprite, _isend, _expType)
 					is_end : _isend,
 					explosion_type : _expType
 				}
-			
-			 instance_create_layer(obj_id.x,obj_id.y,"Instances", obj_BaseBullet, bullet_struct) 	 
+				instance_create_layer(obj_id.x + 30,obj_id.y - (obj_id.sprite_height / 4) ,"Instances", obj_BaseBullet, bullet_struct) 
 }
 
 function burst_shot(obj_id, obj_target, bul_sprite, fire_now, _expType)
