@@ -242,6 +242,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"opening_narration","path":"rooms/opening_narration/opening_narration.yy",},},
     {"roomId":{"name":"Title_Screen","path":"rooms/Title_Screen/Title_Screen.yy",},},
     {"roomId":{"name":"World_Map","path":"rooms/World_Map/World_Map.yy",},},
     {"roomId":{"name":"First_Playable_World","path":"rooms/First_Playable_World/First_Playable_World.yy",},},
@@ -254,7 +255,6 @@
     {"roomId":{"name":"Credit_Screen","path":"rooms/Credit_Screen/Credit_Screen.yy",},},
     {"roomId":{"name":"Howto_Screen","path":"rooms/Howto_Screen/Howto_Screen.yy",},},
     {"roomId":{"name":"ending_narration","path":"rooms/ending_narration/ending_narration.yy",},},
-    {"roomId":{"name":"opening_narration","path":"rooms/opening_narration/opening_narration.yy",},},
   ],
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Curves","folderPath":"folders/Animation Curves.yy","order":12,},
