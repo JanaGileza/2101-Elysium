@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(mouse_check_button(mb_left))
+{
+	part_particles_create(global.particle_system, mouse_x, mouse_y, global.ptBasic, 1)
+}
 //testing purposes for when the player wins and lose
 if(keyboard_check(ord("1")))
 {
@@ -349,6 +353,11 @@ switch(state)
 		global.gameLost = true
 	break;
 	case battle_states.escaped:
+			if(instance_exists(obj_protoplayer))
+			{
+				obj_GameManager.players_current_hp = obj_protoplayer.hp;
+				obj_GameManager.players_current_mp = obj_protoplayer.mana
+			}
 		obj_GameManager.battle_concluded = true
 		obj_GameManager.player_escaped = true
 		obj_GameManager.goto_point = World_Map

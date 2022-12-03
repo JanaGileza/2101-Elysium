@@ -15,6 +15,7 @@ if(!moving)
 		move_x++;
 		moving = true;
 		h = true
+		image_xscale = 1;
 		
 	}
 	
@@ -24,7 +25,7 @@ if(!moving)
 		move_x--;
 		moving = true;
 		h = true
-		
+		image_xscale = -1
 	}
 	
 

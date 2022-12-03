@@ -13,6 +13,12 @@ enum player_state
 	escape
 }
 
+add = 0.2;
+uni_add = shader_get_uniform(glow_shader, "add")
+uni_time = shader_get_uniform(glow_shader, "time")
+glow_count = 0;
+
+glow_multi = 1;
 
 hp = obj_GameManager.players_current_hp;
 hp_max = global.bplayer_health

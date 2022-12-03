@@ -12,5 +12,6 @@ h = false
 v = false
 
 depth = -100
+image_speed = 0.2
 
 interact = false

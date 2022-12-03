@@ -4,21 +4,28 @@
 #macro HEAL_MP 101
 #macro ELE_DAM 102
 
-function items_struct(_myName, _myCost, _myType, _myDesc)constructor
+function items_struct(_myName, _myCost, _myType, _myDesc, _mysprite)constructor
 {
 	my_name = _myName;
 	my_cost = _myCost;
 	my_type = _myType;
 	my_desc = _myDesc;
+	my_sprite = _mysprite
 	my_total = 0;
 }
 
 
 function create_items()
 {
-	ds_list_add(obj_merchant.items, new items_struct("health potion", 10, HEAL_HP, "Heals 10 HP"))
-	ds_list_add(obj_merchant.items, new items_struct("stamina potion", 30, HEAL_MP, "Heals 10 MP"))
-	ds_list_add(obj_merchant.items, new items_struct("Grenade", 50, ELE_DAM, "Grenade that does great damage"))
+	ds_list_add(obj_merchant.items, new items_struct("health potion", 10, HEAL_HP, "Heals 10 HP", spr_healthpotion))
+	ds_list_add(obj_merchant.items, new items_struct("stamina potion", 30, HEAL_MP,  "Heals 10 MP", spr_manapotion))
+	ds_list_add(obj_merchant.items, new items_struct("Grenade", 50, ELE_DAM, "Grenade that does great damage", spr_grenade))
+}
+
+function create_heal_options()
+{
+	ds_list_add(obj_doctor.items, new items_struct("Heal", 100, HEAL_HP, "I can heal you for a small fee.", spr_healthpotion))
+	ds_list_add(obj_doctor.items, new items_struct("No Thanks", 0, HEAL_HP, "No? Well Goodbye..", spr_healthpotion))
 }
 
 function item_execute(item)

@@ -16,6 +16,8 @@ state = battle_states.start
 obj_turn = obj_protoplayer
 global.total_damage = 0;
 
+global.particle_system = part_system_create()
+part_system_depth(global.particle_system, -800)
 
 randomize()
 

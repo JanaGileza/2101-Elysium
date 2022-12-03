@@ -1,6 +1,18 @@
 /// @description Main, contains player state machine
 // You can write your code in this editor
 
+if(charging)
+{
+	glow_count += (0.01 * glow_multi);
+
+	if(glow_count >= 0.8 || glow_count <= 0)
+	{
+		glow_multi *= -1;
+	}
+	add = glow_count;
+	
+	//part_particles_create(global.particle_system, mouse_x, mouse_y, global.ptBasic, 1)
+}
 //experimental on choosing target by clicking on the enemy
 if(mouse_check_button(mb_left))
 {
@@ -16,7 +28,10 @@ if(!my_turn)
 	if(turn_length > 0)
 		turn_length--;
 	if(!charging)
+	{
 		state = player_state.idle
+		add = 0;
+	}
 	exit;
 }
 
@@ -113,19 +128,21 @@ switch(state)
 		if(player_target != noone)
 		{
 			//sprite_index = Battle_Shoot
-			image_speed = 0.2
-			image_index = 0;
-			
+			image_speed = 0.9
+			image_index = 1
+			var temp_struct = { this_sprite : Muzzle_1 }
+			instance_create_layer(x - 100,y - (sprite_height / 2), "Instances", obj_muzzleeffect, temp_struct)
 			basic_shot(id, player_target, Bullet_1, true, Impact_1)		
 			//need to reset target to prevent target choice to be rolled over.
 			player_target = noone
 			my_turn = false
+			
 		}
 		else
 		{
 			sprite_index = Battle_Shoot
-			image_index = 7
-			image_speed = 0.2
+			image_index = 0
+			
 		}
 	}
 	break;
@@ -141,6 +158,9 @@ switch(state)
 						fire_now = false;
 						alarm[0] = 0.05 * room_speed;
 						burst_count++
+						image_speed = 0.9
+						var temp_struct = { this_sprite : Muzzle_6 }
+						instance_create_layer(x - 100,y - (sprite_height / 2), "Instances", obj_muzzleeffect, temp_struct)
 						if(burst_count > 3)
 						{
 							image_index = 0;
@@ -178,7 +198,9 @@ switch(state)
 				{
 					if(charging && charging_length <= 0)
 					{
-						script_execute(skill_perf, id, player_target, Bullet_4, true, Impact_3)
+						var temp_struct = { this_sprite : Muzzle_7 }
+						instance_create_layer(x - 100,y - (sprite_height / 2), "Instances", obj_muzzleeffect, temp_struct)
+						script_execute(skill_perf, id, player_target, Bullet_7, true, Impact_7)
 						player_target = noone
 						charge_enemy = noone
 						charging = false
@@ -215,6 +237,8 @@ switch(state)
 	{
 		if(charging)
 		{
+			image_speed = 0.9
+			sprite_index = Battle_Charge
 			charging_length--
 			var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 			text_box.msg = my_name + " is charging an attack"

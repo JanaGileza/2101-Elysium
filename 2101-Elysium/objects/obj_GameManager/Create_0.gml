@@ -52,3 +52,4 @@ goto_point = noone
 changing_room = false
 
 boss_started = false
+

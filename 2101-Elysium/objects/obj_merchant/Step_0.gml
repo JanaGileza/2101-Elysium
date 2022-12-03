@@ -17,7 +17,7 @@ else
 	obj_TownPlayer.interact = false;
 	if(is_open && keyboard_check(vk_escape))
 	{
-		
+		obj_TownPlayer.zoom = true;
 		is_open = false;
 		global.shop = false;
 	}
@@ -29,7 +29,7 @@ if(is_open)
 	if(allow_key)
 	{
 		allow_key = false;
-		alarm[0] = 0.3 * room_speed
+		alarm[0] = 0.1 * room_speed
  		if(keyboard_check(vk_down) || keyboard_check(ord("S")))
 		{
 			selected++;
