@@ -3,7 +3,7 @@
 
 global.surface_width = surface_get_width(application_surface);
 global.surface_height = surface_get_height(application_surface);
-global.pausedScreen = lose_screen
+global.pausedScreen = spr_background
 global.pausedSurface = surface_create(global.surface_width,global.surface_height);
 
 function chance_hit(perc)

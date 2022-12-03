@@ -13,12 +13,12 @@ if(instance_exists(target))
 	global.total_damage += damage
 	if(target == obj_protoplayer)
 	{
-		explosion_x = irandom_range(x , (x - target.sprite_width) + 200)
-		explosion_y = irandom_range(y , (y - target.sprite_height) + 100)
+		explosion_x = irandom_range(x , (x - target.sprite_width) + 20)
+		explosion_y = irandom_range(y , (y - target.sprite_height) + 10)
 	}
 	else
 	{
-		explosion_x = irandom_range(x , (x - target.sprite_width) - 200)
+		explosion_x = irandom_range(x , (x - target.sprite_width) - 20)
 		explosion_y = irandom_range(y , (y - target.sprite_height))
 	}
 	if(is_end)
