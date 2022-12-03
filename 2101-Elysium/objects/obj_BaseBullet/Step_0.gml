@@ -10,17 +10,38 @@ if(!instance_exists(target))
 		//target = instance_nearest(x,y,obj_baseenemy)
 		instance_destroy()
 }
-	
-if(position_meeting(x,y,target))
-{
-	//checking if the bullet hit or miss
-	if(chance_hit(accuracy))
-		instance_destroy()
-}
+
+if(target == obj_protoplayer)
+	if(position_meeting(x-30,y,target))
+	{
+		//checking if the bullet hit or miss
+		if(chance_hit(accuracy))
+			instance_destroy()
+	}
+	else
+	{
+		if(instance_exists(target))
+			move_towards_point(target.x,target.y, b_speed);
+	}
+
 else
-{
-	if(instance_exists(target))
-		move_towards_point(target.x,target.y, b_speed);
-}
+	if(position_meeting(x+30,y,target))
+	{
+		//checking if the bullet hit or miss
+		if(chance_hit(accuracy))
+			instance_destroy()
+	}
+	else
+	{
+		if(instance_exists(target))
+			move_towards_point(target.x,target.y, b_speed);
+	}
+
+
+
+
+
+
+
 
 
