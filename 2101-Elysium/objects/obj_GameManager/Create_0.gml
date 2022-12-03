@@ -2,6 +2,8 @@
 // You can write your code in this editor
 draw_set_font(Text_Box_Battle)
 gamestart = true
+global.gameWon = false;
+global.gameLost = false;
 global.player_money = 100
 
 players_current_hp = 100
@@ -9,6 +11,7 @@ players_current_mp = 100
 
 global.debug = false;
 
+global.gameState = GAMEWON;
 //global.changing = false;
 //global.currentRoom = World_Map
 

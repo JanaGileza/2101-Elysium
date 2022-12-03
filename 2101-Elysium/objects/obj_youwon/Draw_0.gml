@@ -1,4 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-//room_goto(Title_Screen)
+
+
+if(global.gameWon)
+	draw_self()
+
+
 

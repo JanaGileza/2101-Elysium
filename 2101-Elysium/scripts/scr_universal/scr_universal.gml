@@ -53,3 +53,8 @@ function boss_skill_chance()
 
 }
 
+
+function reset_game()
+{
+	
+}

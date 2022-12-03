@@ -13,9 +13,10 @@ if(keyboard_check(ord("2")))
 
 if(transition)
 {
-				obj_GameManager.battle_concluded = true
-				obj_GameManager.goto_point = World_Map
-				obj_GameManager.enter_point = true
+	
+	obj_GameManager.battle_concluded = true
+	obj_GameManager.goto_point = World_Map
+	obj_GameManager.enter_point = true
 }
 
 if(wait && state != battle_states.win)
@@ -270,7 +271,7 @@ switch(state)
 		if(check_enemies <= 0)
 		{
 			state = battle_states.win
-			room_goto(win_room)
+			
 		}
 		else
 		{
@@ -329,6 +330,8 @@ switch(state)
 			{
 				transition = true;
 				obj_GameManager.player_escaped = false;
+				if(obj_GameManager.boss_started)
+					global.gameWon = true;
 			}
 		}
 		//draw_text(surface_get_width(application_surface) / 2, 10, "Player Wins!")
@@ -343,6 +346,7 @@ switch(state)
 		obj_GameManager.goto_point = World_Map
 		obj_GameManager.player_loss = true
 		obj_GameManager.enter_point = true
+		global.gameLost = true
 	break;
 	case battle_states.escaped:
 		obj_GameManager.battle_concluded = true

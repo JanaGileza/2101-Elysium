@@ -18,7 +18,8 @@ if(keyboard_check(ord("4")))
 
 if(player_loss)
 {
-	room_goto(lose_room)
+	//room_goto(lose_room)
+	start_transition(narration, seq_fadein, seq_fadeout)
 	enter_point = false
 	player_loss = false
 }
@@ -61,8 +62,20 @@ if(enter_point)
 	}
 	else
 	{
-		player = obj_MapPlayer
-		room_goto(goto_point)
+		if(global.gameLost)
+		{
+			start_transition(narration, seq_fadein, seq_fadeout)
+		}
+		else if(global.gameWon)
+		{
+			start_transition(narration, seq_fadein, seq_fadeout)
+		}
+		else
+		{
+			player = obj_MapPlayer
+			room_goto(goto_point)
+		}
+		
 	}
 	
 

@@ -5,6 +5,20 @@
 
 if(room == Title_Screen)
 	exit;
+	
+//if(room == narration)
+//{
+
+//		if(global.gameWon)
+//			global.gameState = GAMEWON
+//		else if(global.gameLost)
+//			global.gameState = GAMEOVER
+//		else
+//			global.gameState = GAMESTART
+	
+//	exit
+		
+//}
 
 if(gamestart)
 {

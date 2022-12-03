@@ -12,18 +12,22 @@
 
 //max width that the text will be before wrapping to new line
 //text_width = 250;
-
+state = global.gameState
 //x pos for where text will be in room
-//text_x = 32;
+text_x = (global.surface_width / 2);
+
 
 //y pos for where text will be in room
-//text_y = 32;
+text_y = (global.surface_height / 2) - 100;
 
 
 //used to control character being drawn and at what speed
-//char_current = 1;
-//char_speed = 0.25;
+char_current = 1;
+char_speed = 0.5;
 
+
+text = receive_text(state)
+//text_wrapped = string_wrap(text, text_width)
 //text[text_current] = string_wrap(text[text_current], text_width);
 
 
