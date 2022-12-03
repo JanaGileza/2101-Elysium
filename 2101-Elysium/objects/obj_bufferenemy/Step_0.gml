@@ -2,6 +2,8 @@
 // You can write your code in this editor
 buff_animation_timer--
 buffer_attack_animation_timer--
+
+
 if(my_turn )
 {
 
@@ -17,7 +19,7 @@ if(my_turn )
 			var random_comrade = 0
 	
 		var comrade = ds_list_find_value(obj_BattleManager.enemy_list, random_comrade)
-		if(chance_hit(75))
+		if(chance_hit(50))
 		{
 			comrade.str_buffed = true;
 			comrade.turn_length_s += 3;
@@ -59,7 +61,7 @@ if(hp <= 0)
 if(buff_animation_timer <= 0 && buffer_attack_animation_timer <= 0)
 	sprite_index = spr_buffer_idle
 	
-
+event_inherited()
 
 
 

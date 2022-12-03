@@ -2,6 +2,7 @@
 // You can write your code in this editor
 heal_animation_timer--
 healer_attack_animation_timer--
+
 if(my_turn )
 {
 	if(hp < hp_max /2)
@@ -20,7 +21,10 @@ if(my_turn )
 		sprite_index = spr_healer1_heal
 		 heal_animation_timer = 20
 		my_turn = false
-		
+		if(turn_length_s > 0)
+			turn_length_s--
+		if(turn_length_d > 0)
+			turn_length_d--
 		
 		obj_BattleManager.next_turn = true
 		obj_BattleManager.process_next_turn = true
@@ -55,6 +59,10 @@ if(my_turn )
 			my_turn = false
 			obj_BattleManager.next_turn = true
 			obj_BattleManager.process_next_turn = true
+			if(turn_length_s > 0)
+				turn_length_s--
+			if(turn_length_d > 0)
+				turn_length_d--
 		}
 		else
 		{
@@ -65,6 +73,10 @@ if(my_turn )
 				healer_attack_animation_timer = 20
 				sprite_index = spr_healer1_attack
 				my_turn = false
+				if(turn_length_s > 0)
+					turn_length_s--
+				if(turn_length_d > 0)
+					turn_length_d--
 			}
 		}
 	}
@@ -77,6 +89,8 @@ if(hp <= 0)
 if(heal_animation_timer <= 0 && healer_attack_animation_timer <=0)
 	sprite_index = spr_healer1_idle
 
+
+event_inherited()
 
 
 

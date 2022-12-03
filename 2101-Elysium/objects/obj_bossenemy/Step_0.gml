@@ -2,9 +2,10 @@
 // You can write your code in this editor
 
 // Inherit the parent event
-//event_inherited();
+
 boss_attack_animation_timer--
-if(my_turn )
+
+if(my_turn)
 {
 	if(chance_hit(use_skill_chance))
 	{
@@ -15,6 +16,9 @@ if(my_turn )
 			//heal
 			case 0:
 			{
+				if(hp >= hp_max)
+					break;
+					
 					var heal_amount = (hp_max / 4)
 					hp += heal_amount
 					var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
@@ -22,6 +26,10 @@ if(my_turn )
 					my_turn = false
 					obj_BattleManager.next_turn = true
 					obj_BattleManager.process_next_turn = true
+					if(turn_length_s > 0)
+						turn_length_s--
+					if(turn_length_d > 0)
+						turn_length_d--
 			}
 			break;
 			//buff
@@ -33,6 +41,14 @@ if(my_turn )
 					turn_length_s += 3;
 					var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 					text_box.msg = string(my_name) + " gave themselves a power boost!" 
+					my_turn = false
+					obj_BattleManager.next_turn = true
+					obj_BattleManager.process_next_turn = true
+					
+						if(turn_length_s > 0)
+							turn_length_s--
+						if(turn_length_d > 0)
+							turn_length_d--
 				}
 				else
 				{
@@ -40,6 +56,13 @@ if(my_turn )
 					turn_length_d += 3;
 					var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 					text_box.msg = string(my_name) + " gave themselves a defense boost!"
+					obj_BattleManager.next_turn = true
+					obj_BattleManager.process_next_turn = true
+					my_turn = false
+						if(turn_length_s > 0)
+							turn_length_s--
+						if(turn_length_d > 0)
+							turn_length_d--
 				}
 			}
 			break;
@@ -57,8 +80,11 @@ if(my_turn )
 						target = noone
 						boss_attack_animation_timer = 20
 						sprite_index = spr_boss_attack
-						my_turn = false
 						burst_count = 0
+						if(turn_length_s > 0)
+							turn_length_s--
+						if(turn_length_d > 0)
+							turn_length_d--
 					}
 					else
 					{
@@ -105,6 +131,10 @@ if(my_turn )
 			boss_attack_animation_timer = 30
 			sprite_index = spr_boss_attack
 			my_turn = false
+			if(turn_length_s > 0)
+				turn_length_s--
+			if(turn_length_d > 0)
+				turn_length_d--
 		}
 	}
 }
@@ -114,3 +144,5 @@ if(hp <= 0)
 	instance_destroy()
 if(boss_attack_animation_timer <= 0)
 	sprite_index = spr_boss_idle
+	
+event_inherited()

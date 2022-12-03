@@ -10,6 +10,7 @@ players_current_hp = 100
 players_current_mp = 100
 
 global.debug = false;
+global.godMode = false;
 
 global.gameState = GAMEWON;
 //global.changing = false;

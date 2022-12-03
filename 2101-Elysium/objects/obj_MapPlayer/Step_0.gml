@@ -45,7 +45,7 @@ if(!moving)
 		v = true
 	}
 	
-	if(keyboard_check(vk_enter))
+	if(keyboard_check(vk_enter) && !global.changing)
 	{
 		instance_create_layer(x,y, "Buttons", obj_UI_Menu_Box)
 	}

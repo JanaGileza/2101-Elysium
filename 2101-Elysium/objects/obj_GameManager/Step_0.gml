@@ -10,7 +10,7 @@ if(keyboard_check(ord("3")))
 
 if(keyboard_check(ord("4")))
 {
-	global.player_exp++
+	global.player_exp += 10
 	
 	if(global.player_exp >= global.player_exp_needed)
 		level_up()
@@ -49,7 +49,7 @@ if(enter_point)
 				enter_point = false
 				player = obj_protoplayer
 				multi = saved_point.map_x
-				room_goto(goto_point)
+				start_transition(goto_point, seq_fadein, seq_fadeout)
 			}
 		
 	}
@@ -58,7 +58,7 @@ if(enter_point)
 				saved_point = current_point
 				enter_point = false
 				player = obj_TownPlayer
-				room_goto(goto_point)
+				start_transition(goto_point, seq_fadein, seq_fadeout)
 	}
 	else
 	{
@@ -73,7 +73,7 @@ if(enter_point)
 		else
 		{
 			player = obj_MapPlayer
-			room_goto(goto_point)
+			start_transition(goto_point, seq_fadein, seq_fadeout)
 		}
 		
 	}

@@ -9,6 +9,11 @@ use_skill_chance = 35;
 skill_choose = 0;
 block_chance = 50;
 
+hp_max = 250
+hp = hp_max
+
+move_speed = 50
+
 my_name = "General"
 
 basic_fire = true

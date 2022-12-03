@@ -1,5 +1,28 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+if(obj_TownPlayer.interact && near_player)
+{
+	var g_width = display_get_gui_width()
+	var g_height = display_get_gui_height()
+	
+	var cam_x = camera_get_view_x(view_camera[0])
+	var cam_y = camera_get_view_y(view_camera[0])
+	
+	var _width = camera_get_view_width(view_camera[0])
+	var _height = camera_get_view_height(view_camera[0])
+	
+	var text_x = (x - cam_x) * (g_width / _width)
+	var text_y = (y - cam_y) * (g_height / _height)
+	
+	draw_set_valign(fa_center)
+	draw_set_halign(fa_middle)
+	draw_text(text_x, text_y - (sprite_height + 40), "Press E to interact")
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
+
+}
+
 if(!is_open)
 	exit;
 	

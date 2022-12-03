@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 attack_animation_timer--
 
 if(my_turn )
@@ -23,6 +24,10 @@ if(my_turn )
 						my_turn = false
 						burst_count = 0
 						use_skill = false
+						if(turn_length_s > 0)
+							turn_length_s--
+						if(turn_length_d > 0)
+							turn_length_d--
 					}
 					else
 					{
@@ -37,6 +42,10 @@ if(my_turn )
 		{
 			shoot_once = false
 			basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
+				if(turn_length_s > 0)
+					turn_length_s--
+				if(turn_length_d > 0)
+					turn_length_d--
 			sprite_index = spr_attacker_attack1
 			attack_animation_timer = 30
 			my_turn = false
@@ -50,3 +59,5 @@ if(hp <= 0)
 
 if(attack_animation_timer <= 0)
 	sprite_index = spr_attacker1_idle
+	
+	event_inherited()

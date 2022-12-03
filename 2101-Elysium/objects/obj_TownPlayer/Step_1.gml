@@ -3,6 +3,6 @@
 
 
 moving = false
-
+interact = false
 
 

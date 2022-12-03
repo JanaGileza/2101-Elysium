@@ -10,12 +10,12 @@ if(my_turn)
 			base_damage *= 2
 			min_damage *= 2;
 		}
-		turn_length_s--
+		 //turn_length_s--
 	}
 	else
 	{
 		str_buffed = false;
-	
+		a_add = 0
 		if(str_already_buff)
 		{
 			str_already_buff = false
@@ -31,12 +31,12 @@ if(my_turn)
 			def_already_buff = true
 			defense_reduction *= 2;
 		}
-		turn_length_d--
+		//turn_length_d--
 	}
 	else
 	{
 		def_buffed = false;
-
+		d_add = 0;
 		if(def_already_buff)
 		{
 			defense_reduction = base_def;

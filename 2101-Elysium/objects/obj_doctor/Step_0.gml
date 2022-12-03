@@ -4,7 +4,7 @@
 
 if(!is_open && place_meeting(x,y, obj_TownPlayer))
 {
-	obj_TownPlayer.interact = true
+
 	
 	if(keyboard_check(ord("E")))
 	{
@@ -14,7 +14,7 @@ if(!is_open && place_meeting(x,y, obj_TownPlayer))
 }
 else 
 {
-	obj_TownPlayer.interact = false;
+
 	if(is_open && keyboard_check(vk_escape))
 	{
 		obj_TownPlayer.zoom = true;

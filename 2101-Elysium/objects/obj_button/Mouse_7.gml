@@ -18,6 +18,7 @@ if(room == Battle_Room || room == Boss_Battle_Room)
 						obj_protoplayer.skill_perf = noone
 					}
 					obj_protoplayer.state = player_state.idle
+					obj_protoplayer.sprite_index = Battle_Idle
 					obj_UI_Box.button_pressed = true
 					
 				break;

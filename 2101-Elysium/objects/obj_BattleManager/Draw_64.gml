@@ -2,6 +2,23 @@
 // You can write your code in this editor
 
 //used for prototyping purposes 
+
+if(global.debug)
+{
+	var x_pos = (global.surface_width / 2) - 150
+	var copy_prio = ds_priority_create()
+	ds_priority_copy(copy_prio, turn_order)
+	for(i = 0; i < ds_priority_size(copy_prio); i++)
+	{
+		var inst = ds_priority_find_max(copy_prio)
+		draw_text(x_pos + (i * 150), 50, string(inst.my_name))
+		ds_priority_delete_max(copy_prio)
+	}
+	
+	if(ds_priority_empty(copy_prio))
+		ds_priority_destroy(copy_prio)
+	
+}
 switch(state)
 {
 	case battle_states.player_turn:

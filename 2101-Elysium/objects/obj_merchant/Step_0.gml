@@ -4,7 +4,7 @@
 
 if(!is_open && place_meeting(x,y, obj_TownPlayer))
 {
-	obj_TownPlayer.interact = true
+
 	
 	if(keyboard_check(ord("E")))
 	{
@@ -14,7 +14,7 @@ if(!is_open && place_meeting(x,y, obj_TownPlayer))
 }
 else 
 {
-	obj_TownPlayer.interact = false;
+
 	if(is_open && keyboard_check(vk_escape))
 	{
 		obj_TownPlayer.zoom = true;
@@ -51,18 +51,27 @@ if(is_open)
 	var check_for = -1
 	if(keyboard_check_pressed(vk_enter))
 	{
-		if(global.player_money >= item_price)
+		if(item_name == "No Thanks")
 		{
-			check_for = ds_list_find_index(global.player_inv, item_slot)
-			if(check_for != -1)
-				ds_list_find_value(global.player_inv, check_for).my_total++
-			else
+			obj_TownPlayer.zoom = true;
+			is_open = false;
+			global.shop = false;
+		}
+		else
+		{
+			if(global.player_money >= item_price)
 			{
-				item_slot.my_total++
-				ds_list_add(global.player_inv, item_slot)
-			}
+				check_for = ds_list_find_index(global.player_inv, item_slot)
+				if(check_for != -1)
+					ds_list_find_value(global.player_inv, check_for).my_total++
+				else
+				{
+					item_slot.my_total++
+					ds_list_add(global.player_inv, item_slot)
+				}
 			
-			global.player_money -= item_price;
+				global.player_money -= item_price;
+			}
 		}
 	}
 }

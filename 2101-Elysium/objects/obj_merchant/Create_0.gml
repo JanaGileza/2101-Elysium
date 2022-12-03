@@ -9,6 +9,8 @@ selected = 0
 
 items = ds_list_create()
 create_items()
+
+image_xscale = -1
 //ds_list_add(items, ["health potion", 10, "Gives 10 hp"])
 //ds_list_add(items, ["Stamina potion", 30, "Restores 20 stamina"])
 

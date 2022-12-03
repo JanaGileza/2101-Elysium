@@ -150,11 +150,11 @@ switch(state)
 				}
 			}
 		}
+		
 		state = battle_states.idle;
-		obj_turn = (obj_protoplayer.move_speed > obj_baseenemy.move_speed) ? obj_protoplayer : obj_baseenemy;
+		//obj_turn = (obj_protoplayer.move_speed > obj_baseenemy.move_speed) ? obj_protoplayer : obj_baseenemy;
 	}
-	
-	
+		
 	
 	break;
 	
@@ -181,22 +181,14 @@ switch(state)
 			else
 				exit;
 		}
+		
 		obj_turn = ds_priority_find_max(turn_order)
 		ds_priority_delete_max(turn_order)
 		
 		if(!instance_exists(obj_turn))
 			break;
 		
-		
-		//if(instance_exists(obj_UI_TextBox))
-		//{
-		//		wait = true
-		//		alarm[11] = 3 * room_speed
-		//		//instance_destroy(obj_UI_TextBox)
-		//}
-		
-	
-		
+
 		if(obj_turn.object_index == obj_protoplayer)
 		{
 			state = battle_states.player_turn
@@ -285,6 +277,7 @@ switch(state)
 				state = battle_states.idle
 		
 			process_next_turn = false
+			
 			//state = battle_states.idle
 		}
 	break;
@@ -338,10 +331,7 @@ switch(state)
 					global.gameWon = true;
 			}
 		}
-		//draw_text(surface_get_width(application_surface) / 2, 10, "Player Wins!")
-		//obj_GameManager.battle_concluded = true
-		//obj_GameManager.goto_point = First_Playable_World
-		//obj_GameManager.enter_point = true
+	
 	break;
 	
 	case battle_states.lose:
