@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 sprite_index = this_sprite
+target_missed = false;
 if(target == obj_protoplayer)
 		image_xscale = -1
 
