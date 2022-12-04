@@ -285,7 +285,8 @@ switch(state)
 	case battle_states.win:
 		if(!wait)
 		{
-			wait = true;
+			//if(!text_skip)
+				wait = true;
 			if(instance_exists(obj_protoplayer))
 			{
 				obj_GameManager.players_current_hp = obj_protoplayer.hp;
@@ -302,8 +303,11 @@ switch(state)
 		
 		if(text_box_delay)
 		{
-			text_box_delay = false
-			alarm[10] = 0.1 * room_speed
+			if(!text_skip)
+			{
+				text_box_delay = false
+				alarm[10] = 0.01 * room_speed
+			}
 			
 			if(global.exp_gained > 0)
 			{
@@ -326,11 +330,22 @@ switch(state)
 			if(keyboard_check(vk_anykey))
 			{
 				transition = true;
+				text_skip = false;
 				obj_GameManager.player_escaped = false;
 				if(obj_GameManager.boss_started)
 					global.gameWon = true;
 			}
 		}
+	
+	
+			if(keyboard_check_pressed(vk_anykey))
+			{
+				text_skip = true
+				wait = false;
+				text_box_delay = true;
+			}
+			
+		
 	
 	break;
 	
@@ -347,6 +362,9 @@ switch(state)
 			{
 				obj_GameManager.players_current_hp = obj_protoplayer.hp;
 				obj_GameManager.players_current_mp = obj_protoplayer.mana
+				
+				if(obj_GameManager.boss_started)
+					obj_GameManager.boss_started = false;
 			}
 		obj_GameManager.battle_concluded = true
 		obj_GameManager.player_escaped = true

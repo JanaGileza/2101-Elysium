@@ -12,6 +12,8 @@ enum battle_states
 	escaped
 }
 
+
+
 state = battle_states.start
 obj_turn = obj_protoplayer
 global.total_damage = 0;
@@ -22,6 +24,7 @@ part_system_depth(global.particle_system, -800)
 randomize()
 
 lerp_exp = 0;
+text_skip = false
 process_next_turn = false;
 
 room_speed = 60
