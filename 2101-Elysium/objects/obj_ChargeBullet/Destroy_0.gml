@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if(instance_exists(target))
+if(instance_exists(target) && !target_missed)
 {
 	
 		
@@ -41,9 +41,22 @@ if(instance_exists(target))
 }
 else
 {
+	if(is_end)
+	{
+		if(target_missed)
+		{
+			var temp_struct = 
+			{
+				life_length : 0.3,
+				text_to_write : "Missed!",
+				activate_text : true
+			}
+			instance_create_layer(target.x - 50, target.y - 100, "Instances", obj_DynamicText, temp_struct)
+		}
 		parent.my_turn = false
 		obj_BattleManager.next_turn = true
 		obj_BattleManager.process_next_turn = true;
+	}
 }	
 	
 

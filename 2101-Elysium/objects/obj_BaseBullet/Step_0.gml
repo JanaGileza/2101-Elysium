@@ -17,11 +17,15 @@ if(target == obj_protoplayer)
 		//checking if the bullet hit or miss
 		if(chance_hit(accuracy))
 			instance_destroy()
+		else
+			target_missed = true;
 	}
 	else
 	{
-		if(instance_exists(target))
+		if(instance_exists(target) && !target_missed)
 			move_towards_point(target.x,target.y, b_speed);
+		else
+			move_towards_point(x - 1, y, b_speed);
 	}
 
 else
@@ -30,11 +34,15 @@ else
 		//checking if the bullet hit or miss
 		if(chance_hit(accuracy))
 			instance_destroy()
+		else
+			target_missed = true;
 	}
 	else
 	{
-		if(instance_exists(target))
+		if(instance_exists(target) && !target_missed)
 			move_towards_point(target.x,target.y, b_speed);
+		else
+			move_towards_point(x + 1, y, b_speed);
 	}
 
 
