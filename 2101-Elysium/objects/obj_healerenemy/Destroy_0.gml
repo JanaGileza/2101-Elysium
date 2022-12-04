@@ -3,12 +3,6 @@
 
 
 
-
-
-
-
 // Inherit the parent event
 event_inherited();
-
-instance_create_layer(x,y,"Instances", obj_attackenemy_death)
-
+instance_create_layer(x,y,"Instances", obj_healerenemy_death)
