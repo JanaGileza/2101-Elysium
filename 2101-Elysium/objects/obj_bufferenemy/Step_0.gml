@@ -27,6 +27,7 @@ if(my_turn )
 			text_box.msg = string(my_name) + " gave a power boost to " + string(comrade.my_name)
 			buff_animation_timer = 30
 			sprite_index = spr_buffer_buff
+			audio_play_sound(snd_buff,1,0)
 		}
 		else 
 		{
@@ -36,6 +37,7 @@ if(my_turn )
 			text_box.msg = string(my_name) + " gave a defense boost to " + string(comrade.my_name) 
 			buff_animation_timer = 30
 			sprite_index = spr_buffer_buff
+			audio_play_sound(snd_buff,1,0)
 		}
 		
 		my_turn = false

@@ -19,7 +19,8 @@ if(my_turn )
 		var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 		text_box.msg = string(my_name) + " healed " + string(heal_amount) 
 		sprite_index = spr_healer1_heal
-		 heal_animation_timer = 20
+		audio_play_sound(snd_heal,1,0)
+		heal_animation_timer = 20
 		my_turn = false
 		if(turn_length_s > 0)
 			turn_length_s--
@@ -56,6 +57,7 @@ if(my_turn )
 			saving_comrade = noone
 			sprite_index = spr_healer1_heal
 			heal_animation_timer = 20
+			audio_play_sound(snd_heal,1,0)
 			my_turn = false
 			obj_BattleManager.next_turn = true
 			obj_BattleManager.process_next_turn = true

@@ -23,6 +23,7 @@ if(my_turn)
 					hp += heal_amount
 					var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 					text_box.msg = string(my_name) + " healed " + string(heal_amount) 
+					audio_play_sound(snd_heal,1,0)
 					my_turn = false
 					obj_BattleManager.next_turn = true
 					obj_BattleManager.process_next_turn = true
@@ -41,6 +42,7 @@ if(my_turn)
 					turn_length_s += 3;
 					var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 					text_box.msg = string(my_name) + " gave themselves a power boost!" 
+					audio_play_sound(snd_buff,1,0)
 					my_turn = false
 					obj_BattleManager.next_turn = true
 					obj_BattleManager.process_next_turn = true
@@ -56,6 +58,7 @@ if(my_turn)
 					turn_length_d += 3;
 					var text_box = instance_create_layer(obj_protoplayer.x + 200,obj_protoplayer.y + 275,"Instances", obj_UI_TextBox)
 					text_box.msg = string(my_name) + " gave themselves a defense boost!"
+					audio_play_sound(snd_buff,1,0)
 					obj_BattleManager.next_turn = true
 					obj_BattleManager.process_next_turn = true
 					my_turn = false
