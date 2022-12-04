@@ -11,7 +11,7 @@ path_found = false
 h = false
 v = false
 
-depth = -100
+depth = -50
 image_speed = 0.2
 
 interact = false

@@ -4,7 +4,7 @@
 //// Inherit the parent event
 //event_inherited();
 
-if(position_meeting(x - 30,y,target))
+if(position_meeting(x ,y,target))
 	instance_destroy()
 else
 {
