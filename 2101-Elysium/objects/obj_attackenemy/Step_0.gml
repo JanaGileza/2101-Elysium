@@ -21,6 +21,7 @@ if(my_turn )
 						target = noone
 						attack_animation_timer = 30
 						sprite_index = spr_attacker_attack1
+						audio_play_sound(snd_burstshot,1,0)
 						my_turn = false
 						burst_count = 0
 						use_skill = false
@@ -48,6 +49,7 @@ if(my_turn )
 					turn_length_d--
 			sprite_index = spr_attacker_attack1
 			attack_animation_timer = 30
+			audio_play_sound(snd_attack,1,0)
 			my_turn = false
 		}
 	}

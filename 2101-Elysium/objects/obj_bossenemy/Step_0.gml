@@ -77,6 +77,7 @@ if(my_turn)
 					if(burst_count > 2)
 					{				
 						script_execute(burst_shot, id, obj_protoplayer, Bullet_6, true, Impact_6 )
+						audio_play_sound(snd_burstshot,1,0)
 						target = noone
 						boss_attack_animation_timer = 20
 						sprite_index = spr_boss_attack
@@ -88,6 +89,7 @@ if(my_turn)
 					}
 					else
 					{
+						audio_play_sound(snd_burstshot,1,0)
 						script_execute(burst_shot, id, obj_protoplayer, Bullet_6, false, Impact_6 )
 					}
 					
@@ -130,6 +132,7 @@ if(my_turn)
 			basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
 			boss_attack_animation_timer = 30
 			sprite_index = spr_boss_attack
+			audio_play_sound(snd_attack,1,0)
 			my_turn = false
 			if(turn_length_s > 0)
 				turn_length_s--

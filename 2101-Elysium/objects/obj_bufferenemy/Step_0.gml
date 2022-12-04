@@ -50,6 +50,7 @@ if(my_turn )
 			basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
 			buffer_attack_animation_timer = 30
 			sprite_index = spr_buffer_attack
+			audio_play_sound(snd_attack,1,0)
 			my_turn = false
 		}
 	}

@@ -72,6 +72,7 @@ if(my_turn )
 				basic_shot(id, obj_protoplayer, Bullet_5, true, Impact_5)
 				healer_attack_animation_timer = 20
 				sprite_index = spr_healer1_attack
+				audio_play_sound(snd_attack,1,0)
 				my_turn = false
 				if(turn_length_s > 0)
 					turn_length_s--

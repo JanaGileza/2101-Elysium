@@ -135,6 +135,7 @@ switch(state)
 			basic_shot(id, player_target, Bullet_1, true, Impact_1)		
 			//need to reset target to prevent target choice to be rolled over.
 			player_target = noone
+			audio_play_sound(snd_attack,1,0)
 			my_turn = false
 			
 		}
@@ -166,6 +167,7 @@ switch(state)
 							image_index = 0;
 							script_execute(skill_perf, id, player_target, Bullet_6, true, Impact_6 )
 							player_target = noone
+							audio_play_sound(snd_burstshot,1,0)
 							my_turn = false
 							skill_perf = noone
 							burst_count = 0
